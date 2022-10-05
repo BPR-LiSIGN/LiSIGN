@@ -45,6 +45,8 @@ struct LoginPage: View {
                     // Forgot Password Button...
                     Button {
                         loginData.ForgotPassword()
+                        // HomePage()
+                        print("Now into the Homepage...")
                     } label: {
                         Text("Forgot password?")
                             .font(.custom(customFont, size: 14))
