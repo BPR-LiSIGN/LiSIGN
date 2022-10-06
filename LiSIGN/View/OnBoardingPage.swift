@@ -2,8 +2,6 @@
 //  OnBoardingPage.swift
 //  LiSIGN_login
 //
-//  Created by Juan Trebolle on 21/09/2022.
-//
 
 import SwiftUI
 

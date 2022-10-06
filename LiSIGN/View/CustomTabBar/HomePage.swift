@@ -2,8 +2,6 @@
 //  HomePage.swift
 //  LiSIGN
 //
-//  Created by Juan Trebolle on 05/10/2022.
-//
 
 import SwiftUI
 

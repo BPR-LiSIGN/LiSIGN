@@ -10,9 +10,10 @@
 		2F76CBE728ED925600ED7F9C /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBE628ED925600ED7F9C /* HomePage.swift */; };
 		2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBE828ED94B400ED7F9C /* RoomsView.swift */; };
 		2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */; };
-		2F76CBEE28EDA5D600ED7F9C /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBED28EDA5D600ED7F9C /* AppTabBar.swift */; };
+		2F76CBEE28EDA5D600ED7F9C /* AppTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBED28EDA5D600ED7F9C /* AppTabBarView.swift */; };
 		2F76CBF028EDB18700ED7F9C /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */; };
 		2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */; };
+		2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */; };
 		A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663828E2F5C800F59461 /* LiSIGNApp.swift */; };
 		A461663B28E2F5C800F59461 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663A28E2F5C800F59461 /* ContentView.swift */; };
 		A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A461663C28E2F5CA00F59461 /* Assets.xcassets */; };
@@ -49,9 +50,10 @@
 		2F76CBE628ED925600ED7F9C /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		2F76CBE828ED94B400ED7F9C /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceView.swift; sourceTree = "<group>"; };
-		2F76CBED28EDA5D600ED7F9C /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
+		2F76CBED28EDA5D600ED7F9C /* AppTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBarView.swift; sourceTree = "<group>"; };
 		2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
+		2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		A461663528E2F5C800F59461 /* LiSIGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiSIGN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461663828E2F5C800F59461 /* LiSIGNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNApp.swift; sourceTree = "<group>"; };
 		A461663A28E2F5C800F59461 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -101,9 +103,10 @@
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
 				2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */,
-				2F76CBED28EDA5D600ED7F9C /* AppTabBar.swift */,
+				2F76CBED28EDA5D600ED7F9C /* AppTabBarView.swift */,
 				2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */,
 				2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */,
+				2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */,
 			);
 			path = CustomTabBar;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				A461663B28E2F5C800F59461 /* ContentView.swift in Sources */,
 				A4F171AC28E306FF006BE5B1 /* OnBoardingPage.swift in Sources */,
 				2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */,
+				2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */,
 				A4F171A828E306EE006BE5B1 /* CustomCorners.swift in Sources */,
 				A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */,
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
@@ -329,7 +333,7 @@
 				2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */,
 				2F76CBE728ED925600ED7F9C /* HomePage.swift in Sources */,
 				A4F171A328E306A0006BE5B1 /* LoginPageModel.swift in Sources */,
-				2F76CBEE28EDA5D600ED7F9C /* AppTabBar.swift in Sources */,
+				2F76CBEE28EDA5D600ED7F9C /* AppTabBarView.swift in Sources */,
 				2F76CBF028EDB18700ED7F9C /* CustomTabBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
