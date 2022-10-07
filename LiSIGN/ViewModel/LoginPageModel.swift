@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import FirebaseAuth
+import FirebaseCore
+import Firebase
 
 class LoginPageModel: ObservableObject {
     
@@ -18,18 +21,27 @@ class LoginPageModel: ObservableObject {
     @Published var registerUser: Bool = false
     @Published var re_Enter_Password: String = ""
     @Published var showReEnterPassword: Bool = false
+     var errorText: Bool = false
     
     // Login Call...
     func Login(){
-        // Do Action here...
+        Auth.auth().signIn(withEmail:email, password: password)
+        {
+            result, error in
+            if error != nil {print(error!.localizedDescription)}
+
+                }
     }
     
-    func Register(){
-        // Do Action here...
+    func Register() {
+        Auth.auth().createUser(withEmail: email, password: password)
+        {
+            result, error in
+            if error != nil {print(error!.localizedDescription)}
+        }
     }
-    
     func ForgotPassword(){
         // Do Action here...
     }
     
-}
+    }

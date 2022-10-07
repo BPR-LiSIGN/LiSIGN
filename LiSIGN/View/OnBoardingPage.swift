@@ -42,7 +42,7 @@ struct OnBoardingPage: View {
                     .cornerRadius(10)
                     .shadow(color: Color.black.opacity(0.1),
                             radius: 5, x: 5, y: 5)
-                    .foregroundColor(Color.brown)
+                    .foregroundColor(Color.cyan)
             }
             .padding(.horizontal, 30)
             .offset(y: 100)
@@ -56,7 +56,7 @@ struct OnBoardingPage: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             //Color.purple // change the purple to something more blueish
-            Color.brown
+            Color.cyan
         )
         .overlay(
             
