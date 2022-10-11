@@ -10,10 +10,7 @@ struct CustomTabBarContainerView<Content: View>: View {
     @Binding var selection: TabBarItem
     let content: Content
     @State private var tabs: [TabBarItem] = [
-        TabBarItem(iconName: "house", title: "Rooms", color: Color.red),
-        TabBarItem(iconName: "lamp.desk", title: "Marketplace", color: Color.blue),
-        TabBarItem(iconName: "teddybear", title: "Objects", color: Color.orange),
-        TabBarItem(iconName: "heart", title: "Favorites", color: Color.cyan)
+        .Rooms, .Marketplace, .Objects, .Favorites
     ]
     
     init(selection: Binding<TabBarItem>, @ViewBuilder content: () -> Content) {
@@ -36,10 +33,7 @@ struct CustomTabBarContainerView<Content: View>: View {
 
 struct CustomTabBarContainerView_Previews: PreviewProvider {
     static let tabs: [TabBarItem] = [
-        TabBarItem(iconName: "house", title: "Rooms", color: Color.red),
-        TabBarItem(iconName: "lamp.desk", title: "Marketplace", color: Color.blue),
-        TabBarItem(iconName: "teddybear", title: "Objects", color: Color.orange),
-        TabBarItem(iconName: "heart", title: "Favorites", color: Color.cyan)
+        .Rooms, .Marketplace, .Objects, .Favorites
     ]
 
     static var previews: some View {

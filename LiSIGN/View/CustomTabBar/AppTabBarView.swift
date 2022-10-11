@@ -7,34 +7,28 @@ import SwiftUI
 struct AppTabBarView: View {
     
     @State private var selection: String = "home"
-    @State private var tabSelection: TabBarItem = TabBarItem(iconName: "house", title: "Rooms", color: Color.red)
+    @State private var tabSelection: TabBarItem = .Rooms
     
     var body: some View {
         defaultTabBarView;
         CustomTabBarContainerView(selection: $tabSelection) {
             Color.blue
-                .tabBarItem(tab: TabBarItem(iconName: "house", title: "Rooms", color: Color.red), selection: $tabSelection)
+                .tabBarItem(tab: .Rooms, selection: $tabSelection)
             
+            // as an alternative to the eurosign icon, "magnifyingglass"
             Color.red
-                .tabBarItem(tab: TabBarItem(iconName: "lamp.desk", title: "Marketplace", color: Color.blue), selection: $tabSelection)
+                .tabBarItem(tab: .Marketplace, selection: $tabSelection)
             
             Color.cyan
-                .tabBarItem(tab: TabBarItem(iconName: "teddybear", title: "Objects", color: Color.brown), selection: $tabSelection)
+                .tabBarItem(tab: .Objects, selection: $tabSelection)
             
             Color.green
-                .tabBarItem(tab: TabBarItem(iconName: "heart", title: "Favourites", color: Color.orange), selection: $tabSelection)
+                .tabBarItem(tab: .Favorites, selection: $tabSelection)
         }
     }
 }
 
 struct AppTabBar_Previews: PreviewProvider {
-    
-    static let tabs: [TabBarItem] = [
-        TabBarItem(iconName: "house", title: "Rooms", color: Color.red),
-        TabBarItem(iconName: "lamp.desk", title: "Marketplace", color: Color.blue),
-        TabBarItem(iconName: "teddybear", title: "Objects", color: Color.orange),
-        TabBarItem(iconName: "heart", title: "Favorites", color: Color.cyan)
-    ]
     
     static var previews: some View {
         AppTabBarView()
@@ -51,12 +45,12 @@ extension AppTabBarView {
                 }
             Color.blue
                 .tabItem {
-                    Image(systemName: "lamp.desk")
+                    Image(systemName: "eurosign")
                     Text("Marketplace")
                 }
             Color.orange
                 .tabItem {
-                    Image(systemName: "profile")
+                    Image(systemName: "lamp.desk")
                     Text("Objects")
                 }
             Color.cyan
