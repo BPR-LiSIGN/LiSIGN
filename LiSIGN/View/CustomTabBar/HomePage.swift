@@ -1,0 +1,31 @@
+//
+//  HomePage.swift
+//  LiSIGN
+//
+
+import SwiftUI
+
+struct HomePage: View {
+    var body: some View {
+        TabView{
+            RoomsView()
+                .tabItem{
+                    Image(systemName: "house")
+                    Text("Rooms")
+                }
+            MarketPlaceView()
+                .tabItem{
+                    Image(systemName: "store")
+                    Text("Marketplace")
+                }
+            
+        }
+    }
+}
+
+struct HomePage_Previews: PreviewProvider {
+    static var previews: some View {
+        HomePage()
+            .previewDevice("iPhone 14 Pro")
+    }
+}

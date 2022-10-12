@@ -2,8 +2,6 @@
 //  OnBoardingPage.swift
 //  LiSIGN_login
 //
-//  Created by Juan Trebolle on 21/09/2022.
-//
 
 import SwiftUI
 
@@ -23,9 +21,7 @@ struct OnBoardingPage: View {
                 .fontWeight(.bold)
                 .foregroundColor(.white)
             // Add floating effect on the image
-            Image("bad3")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            // Image("bad3").resizable().aspectRatio(contentMode: .fit)
             
             Button {
                 // Not sure if this animation is working properly :/
@@ -73,7 +69,7 @@ struct OnBoardingPage: View {
 struct OnBoardingPage_Previews: PreviewProvider {
     static var previews: some View {
         OnBoardingPage()
-            .previewDevice("iPhone 13 Pro")
+            .previewDevice("iPhone 14 Pro")
     }
 }
 
