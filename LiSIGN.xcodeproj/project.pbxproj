@@ -196,7 +196,6 @@
 				A4F171A128E3066E006BE5B1 /* ViewModel */,
 				A461663828E2F5C800F59461 /* LiSIGNApp.swift */,
 				A461663A28E2F5C800F59461 /* ContentView.swift */,
-				A4F171AD28E30710006BE5B1 /* bad3.png */,
 				A461663E28E2F5CA00F59461 /* Preview Content */,
 			);
 			path = LiSIGN;
@@ -206,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				A461663F28E2F5CA00F59461 /* Preview Assets.xcassets */,
+				A4F171AD28E30710006BE5B1 /* bad3.png */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";

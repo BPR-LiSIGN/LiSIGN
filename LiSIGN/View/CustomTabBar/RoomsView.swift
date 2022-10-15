@@ -26,7 +26,7 @@ struct RoomsView: View {
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
 //                        // Text(fruit)
-                        ProductCard(image: "./bad3", title: fruit, type: "room", price: 11.99)
+                        ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
 
                     }
                 }
