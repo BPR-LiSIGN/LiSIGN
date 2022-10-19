@@ -7,7 +7,6 @@ import SwiftUI
 
 struct MarketPlaceView: View {
     var body: some View {
-        Text("RoomsView")
         NavigationView{
             ZStack{
                 Color.blue

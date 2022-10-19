@@ -9,13 +9,19 @@ struct AppTabBarView: View {
     @State private var selection: String = "home"
     @State private var tabSelection: TabBarItem = .Rooms
     
+    // instances of each tab-view
+    var roomsView = RoomsView()
+    var marketPlaceView = MarketPlaceView()
+    
     var body: some View {
         CustomTabBarContainerView(selection: $tabSelection) {
-            Color.blue
+            // Color.blue
+            roomsView
                 .tabBarItem(tab: .Rooms, selection: $tabSelection)
             
             // as an alternative to the eurosign icon, "magnifyingglass"
-            Color.red
+            // Color.red
+            marketPlaceView
                 .tabBarItem(tab: .Marketplace, selection: $tabSelection)
             
             Color.cyan

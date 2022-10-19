@@ -158,17 +158,25 @@
 		2F37678428FB23C3000050FE /* shared */ = {
 			isa = PBXGroup;
 			children = (
+				A4F171A728E306EE006BE5B1 /* CustomCorners.swift */,
 				2F37678528FB23DE000050FE /* ProductCard.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
 		};
-		2F76CBEC28EDA52E00ED7F9C /* CustomTabBar */ = {
+		2F6257AB290098DC002E9832 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
 				2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		2F76CBEC28EDA52E00ED7F9C /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
 				2F76CBED28EDA5D600ED7F9C /* AppTabBarView.swift */,
 				2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */,
 				2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */,
@@ -249,11 +257,11 @@
 		A4F171A428E306C4006BE5B1 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2F6257AB290098DC002E9832 /* Pages */,
 				2F37678428FB23C3000050FE /* shared */,
 				2F76CBEC28EDA52E00ED7F9C /* CustomTabBar */,
 				A4F171AB28E306FF006BE5B1 /* OnBoardingPage.swift */,
 				A4F171A928E306F6006BE5B1 /* LoginPage.swift */,
-				A4F171A728E306EE006BE5B1 /* CustomCorners.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
