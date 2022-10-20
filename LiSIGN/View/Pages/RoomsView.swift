@@ -19,7 +19,16 @@ struct RoomsView: View {
         
         NavigationView {
             VStack(alignment: .leading){
-                SearchBar(searchText: $searchText, searching: $searching)
+                HStack {
+                    SearchBar(searchText: $searchText, searching: $searching)
+                    Button("+") {
+                        print("Opening camera to add room")
+                    }
+                    .cornerRadius(20)
+                    .buttonStyle(.borderedProminent)
+                    .tint(.cyan)
+                    .padding(10)
+                }
                 // Color.red
                 List{
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
@@ -51,39 +60,6 @@ struct RoomsView: View {
             .navigationTitle(searching ? "Searching": "Rooms")
             
         }
-    }
-}
-
-struct SearchBar: View {
-    @Binding var searchText: String
-    @Binding var searching: Bool
-    
-    var body: some View{
-        ZStack{
-            Rectangle()
-                .foregroundColor(.gray)
-            HStack{
-                Image(systemName: "magnifyingglass")
-                TextField("Search...", text: $searchText) { startedEditing in
-                    if startedEditing  {
-                        withAnimation{
-                            searching = true
-                        }
-                    }
-                    
-                } onCommit: {
-                    withAnimation{
-                        searching = false
-                        UIApplication.shared.dismissKeyboard()
-                    }
-                }
-            }
-            .foregroundColor(.white)
-            .padding(.leading, 13)
-        }
-        .frame(height: 40)
-        .cornerRadius(13)
-        .padding()
     }
 }
 
