@@ -22,11 +22,14 @@ struct RoomsView: View {
                 HStack {
                     SearchBar(searchText: $searchText, searching: $searching)
                     Button("+") {
-                        print("Opening camera to add room")
+                        /**
+                         right-click on the play button in the preview canvas and choose “Debug Preview”. With that small change made you’ll find your print() calls work as normal.
+                         */
+                        // Add here connection to the CameraView or the ViewModel
                     }
                     .cornerRadius(20)
                     .buttonStyle(.borderedProminent)
-                    .tint(.cyan)
+                    .tint(Color.accentColor)
                     .padding(10)
                 }
                 // Color.red
