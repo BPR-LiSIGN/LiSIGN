@@ -7,8 +7,9 @@ import SwiftUI
 
 struct MarketPlaceView: View {
     @State private var search: String = ""
+    @State private var searching = false
     @State private var selectedIndex: Int = 1
-    private let categories = ["All", "Chair", "Sofa", "Lamp", "Kitchen", "Table"]
+    private let categories = ["Chair", "Sofa", "Lamp", "Kitchen"]
     var body: some View {
         NavigationView {
             ZStack {
@@ -18,12 +19,11 @@ struct MarketPlaceView: View {
                 ScrollView (showsIndicators: false) {
                     VStack (alignment: .leading) {
                         
-                        AppBarView()
                         
                         TagLineView()
                             .padding()
                         
-                        SearchAndScanView(search: $search)
+                        SearchBar(searchText: $search, searching: $searching)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack {
@@ -36,8 +36,8 @@ struct MarketPlaceView: View {
                             .padding()
                         }
                         
-                        Text("Popular")
-                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        Text("Bestsellers")
+                            .font(.custom("Raleway-Italic-VariableFont_wght", size: 24))
                             .padding(.horizontal)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
@@ -46,7 +46,7 @@ struct MarketPlaceView: View {
                                     NavigationLink(
                                         destination: LoginPage(),
                                         label: {
-                                            ProductCardView(image: Image("chair_\(i+1)"), size: 210)
+                                            ProductCardView(image: Image("chair_\(i+1)"), size: 178)
                                         })
                                         .navigationBarHidden(true)
                                         .foregroundColor(.black)
@@ -56,16 +56,31 @@ struct MarketPlaceView: View {
                         }
                         .padding(.bottom)
                         
-                        Text("Best")
-                            .font(.custom("PlayfairDisplay-Bold", size: 24))
+                        Text("All")
+                            .font(.custom("PlayfairDisplay-Regular", size: 20))
                             .padding(.horizontal)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
-                            HStack (spacing: 0) {
-                                ForEach(0 ..< 4) { i in
-                                    ProductCardView(image: Image("chair_\(4-i)"), size: 180)
-                                }
-                                .padding(.leading)
+                            VStack(spacing:30)
+                            {
+                                HStack(spacing:30)
+                                {
+                                    ForEach(0 ..< 2) { i in
+                                        ProductCardView(image: Image("chair_1"), size: 130)
+                                    }
+
+                                }.padding(.leading)
+                                
+                                HStack (spacing: 30) {
+                                    ForEach(0 ..< 2) { i in
+                                        ProductCardView(image: Image("chair_2"), size: 130)
+                                    }
+                                }.padding(.leading)
+                                HStack (spacing: 30) {
+                                    ForEach(0 ..< 2) { i in
+                                        ProductCardView(image: Image("chair_3"), size: 130)
+                                    }
+                                }.padding(.leading)
                             }
                         }
                         
@@ -74,7 +89,6 @@ struct MarketPlaceView: View {
                 
                 VStack {
                     Spacer()
-                    BottomNavBarView()
                 }
             }
         }
@@ -110,13 +124,13 @@ struct AppBarView: View {
 }
 struct TagLineView: View {
     var body: some View {
-        Text("Find the \nBest ")
+        Text("Market place")
             .font(.custom("PlayfairDisplay-Regular", size: 28))
-            .foregroundColor(Color("Primary"))
-            + Text("Furniture!")
+            
             .font(.custom("PlayfairDisplay-Bold", size: 28))
             .fontWeight(.bold)
-            .foregroundColor(Color("Primary"))
+            .foregroundColor(Color("Brown"))
+            
     }
 }
 
@@ -137,7 +151,7 @@ struct SearchAndScanView: View {
             Button(action: {}) {
                 Image("Scan")
                     .padding()
-                    .background(Color("Primary"))
+                    .background(Color("Brown"))
                     .cornerRadius(10.0)
             }
         }
@@ -153,8 +167,8 @@ struct CategoryView: View {
             Text(text)
                 .font(.system(size: 18))
                 .fontWeight(.medium)
-                .foregroundColor(isActive ? Color("Primary") : Color.black.opacity(0.5))
-            if (isActive) { Color("Primary")
+                .foregroundColor(isActive ? Color("Brown") : Color.black.opacity(0.5))
+            if (isActive) { Color("Brown")
                 .frame(width: 15, height: 2)
                 .clipShape(Capsule())
             }
@@ -173,14 +187,14 @@ struct ProductCardView: View {
                 .resizable()
                 .frame(width: size, height: 200 * (size/210))
                 .cornerRadius(20.0)
-            Text("Luxury Swedian chair").font(.title3).fontWeight(.bold)
+            Text("Chair").font(.title3).fontWeight(.bold)
 
             HStack (spacing: 2) {
                 ForEach(0 ..< 5) { item in
                     Image("star")
                 }
                 Spacer()
-                Text("$1299")
+                Text("$1000")
                     .font(.title3)
                     .fontWeight(.bold)
             }
@@ -194,32 +208,10 @@ struct ProductCardView: View {
 }
 
 
-struct BottomNavBarView: View {
-    var body: some View {
-        HStack {
-            BottomNavBarItem(image: Image("Home"), action: {})
-            BottomNavBarItem(image: Image("fav"), action: {})
-            BottomNavBarItem(image: Image("shop"), action: {})
-            BottomNavBarItem(image: Image("User"), action: {})
-        }
-        .padding()
-        .background(Color.white)
-        .clipShape(Capsule())
-        .padding(.horizontal)
-        .shadow(color: Color.blue.opacity(0.15), radius: 8, x: 2, y: 6)
-    }
-}
 
-struct BottomNavBarItem: View {
-    let image: Image
-    let action: () -> Void
-    var body: some View {
-        Button(action: action) {
-            image
-                .frame(maxWidth: .infinity)
-        }
-    }
-}
+
+
+
 
 
 //

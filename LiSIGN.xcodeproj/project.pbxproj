@@ -52,6 +52,7 @@
 		A461664A28E2F5CA00F59461 /* LiSIGNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461664928E2F5CA00F59461 /* LiSIGNTests.swift */; };
 		A461665428E2F5CA00F59461 /* LiSIGNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461665328E2F5CA00F59461 /* LiSIGNUITests.swift */; };
 		A461665628E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461665528E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift */; };
+		A4DA5CB72907003500E6CCF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DA5CB62907003500E6CCF7 /* Assets.xcassets */; };
 		A4F171A328E306A0006BE5B1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171A228E306A0006BE5B1 /* LoginPageModel.swift */; };
 		A4F171A628E306D4006BE5B1 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A4F171A528E306D4006BE5B1 /* Fonts */; };
 		A4F171A828E306EE006BE5B1 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171A728E306EE006BE5B1 /* CustomCorners.swift */; };
@@ -99,6 +100,7 @@
 		A461664F28E2F5CA00F59461 /* LiSIGNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiSIGNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461665328E2F5CA00F59461 /* LiSIGNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNUITests.swift; sourceTree = "<group>"; };
 		A461665528E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4DA5CB62907003500E6CCF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4F171A228E306A0006BE5B1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		A4F171A528E306D4006BE5B1 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		A4F171A728E306EE006BE5B1 /* CustomCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				A461663828E2F5C800F59461 /* LiSIGNApp.swift */,
 				A461663A28E2F5C800F59461 /* ContentView.swift */,
 				A461663E28E2F5CA00F59461 /* Preview Content */,
+				A4DA5CB62907003500E6CCF7 /* Assets.xcassets */,
 			);
 			path = LiSIGN;
 			sourceTree = "<group>";
@@ -412,6 +415,7 @@
 				A4F171AE28E30710006BE5B1 /* bad3.png in Resources */,
 				A461664028E2F5CA00F59461 /* Preview Assets.xcassets in Resources */,
 				A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */,
+				A4DA5CB72907003500E6CCF7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
