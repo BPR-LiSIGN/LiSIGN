@@ -52,12 +52,14 @@
 		A461664A28E2F5CA00F59461 /* LiSIGNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461664928E2F5CA00F59461 /* LiSIGNTests.swift */; };
 		A461665428E2F5CA00F59461 /* LiSIGNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461665328E2F5CA00F59461 /* LiSIGNUITests.swift */; };
 		A461665628E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461665528E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift */; };
+		A4DA5CB72907003500E6CCF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4DA5CB62907003500E6CCF7 /* Assets.xcassets */; };
 		A4F171A328E306A0006BE5B1 /* LoginPageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171A228E306A0006BE5B1 /* LoginPageModel.swift */; };
 		A4F171A628E306D4006BE5B1 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = A4F171A528E306D4006BE5B1 /* Fonts */; };
 		A4F171A828E306EE006BE5B1 /* CustomCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171A728E306EE006BE5B1 /* CustomCorners.swift */; };
 		A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171A928E306F6006BE5B1 /* LoginPage.swift */; };
 		A4F171AC28E306FF006BE5B1 /* OnBoardingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4F171AB28E306FF006BE5B1 /* OnBoardingPage.swift */; };
 		A4F171AE28E30710006BE5B1 /* bad3.png in Resources */ = {isa = PBXBuildFile; fileRef = A4F171AD28E30710006BE5B1 /* bad3.png */; };
+		A4FA0E5D2907F27100DB9F2D /* CardDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4FA0E5C2907F27100DB9F2D /* CardDetailed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,12 +101,14 @@
 		A461664F28E2F5CA00F59461 /* LiSIGNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiSIGNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461665328E2F5CA00F59461 /* LiSIGNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNUITests.swift; sourceTree = "<group>"; };
 		A461665528E2F5CA00F59461 /* LiSIGNUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A4DA5CB62907003500E6CCF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A4F171A228E306A0006BE5B1 /* LoginPageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageModel.swift; sourceTree = "<group>"; };
 		A4F171A528E306D4006BE5B1 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		A4F171A728E306EE006BE5B1 /* CustomCorners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCorners.swift; sourceTree = "<group>"; };
 		A4F171A928E306F6006BE5B1 /* LoginPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPage.swift; sourceTree = "<group>"; };
 		A4F171AB28E306FF006BE5B1 /* OnBoardingPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingPage.swift; sourceTree = "<group>"; };
 		A4F171AD28E30710006BE5B1 /* bad3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bad3.png; sourceTree = "<group>"; };
+		A4FA0E5C2907F27100DB9F2D /* CardDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDetailed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +177,7 @@
 		2F6257AB290098DC002E9832 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				A4FA0E5C2907F27100DB9F2D /* CardDetailed.swift */,
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
 				2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */,
@@ -221,6 +226,7 @@
 				A461663828E2F5C800F59461 /* LiSIGNApp.swift */,
 				A461663A28E2F5C800F59461 /* ContentView.swift */,
 				A461663E28E2F5CA00F59461 /* Preview Content */,
+				A4DA5CB62907003500E6CCF7 /* Assets.xcassets */,
 			);
 			path = LiSIGN;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				A4F171AE28E30710006BE5B1 /* bad3.png in Resources */,
 				A461664028E2F5CA00F59461 /* Preview Assets.xcassets in Resources */,
 				A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */,
+				A4DA5CB72907003500E6CCF7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -443,6 +450,7 @@
 				2F5F5EE328F1BCB500C56C6D /* TabBarItem.swift in Sources */,
 				A4F171A828E306EE006BE5B1 /* CustomCorners.swift in Sources */,
 				A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */,
+				A4FA0E5D2907F27100DB9F2D /* CardDetailed.swift in Sources */,
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
 				2F37678628FB23DE000050FE /* ProductCard.swift in Sources */,
 				2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */,
@@ -611,7 +619,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LiSIGN/Preview Content\"";
-				DEVELOPMENT_TEAM = DR7VNX8CP9;
+				DEVELOPMENT_TEAM = 578GML8YK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -640,7 +648,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LiSIGN/Preview Content\"";
-				DEVELOPMENT_TEAM = DR7VNX8CP9;
+				DEVELOPMENT_TEAM = 578GML8YK9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
