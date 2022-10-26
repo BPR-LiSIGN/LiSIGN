@@ -9,6 +9,7 @@ struct MarketPlaceView: View {
     @State private var search: String = ""
     @State private var searching = false
     @State private var selectedIndex: Int = 1
+    var cardDetailed = [CardDetailed()];
     private let categories = ["Chair", "Sofa", "Lamp", "Kitchen"]
     var body: some View {
         NavigationView {
@@ -37,16 +38,17 @@ struct MarketPlaceView: View {
                         }
                         
                         Text("Bestsellers")
-                            .font(.custom("Raleway-Italic-VariableFont_wght", size: 24))
+                            .font(.system(size: 30, weight: .medium, design: .default))
                             .padding(.horizontal)
-                        
+                                                        
+
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack (spacing: 0) {
                                 ForEach(0 ..< 4) { i in
                                     NavigationLink(
-                                        destination: LoginPage(),
+                                        destination: CardDetailed(),
                                         label: {
-                                            ProductCardView(image: Image("chair_\(i+1)"), size: 178)
+                                            ProductCardViewHorizontal(image: Image("chair_\(i+1)"), size: 200)
                                         })
                                         .navigationBarHidden(true)
                                         .foregroundColor(.black)
@@ -57,7 +59,7 @@ struct MarketPlaceView: View {
                         .padding(.bottom)
                         
                         Text("All")
-                            .font(.custom("PlayfairDisplay-Regular", size: 20))
+                            .font(.system(size: 24, weight: .light, design: .default))
                             .padding(.horizontal)
                         
                         ScrollView (.horizontal, showsIndicators: false) {
@@ -66,19 +68,21 @@ struct MarketPlaceView: View {
                                 HStack(spacing:30)
                                 {
                                     ForEach(0 ..< 2) { i in
-                                        ProductCardView(image: Image("chair_1"), size: 130)
+                                        ProductCardView(image: Image("chair_1"), size: 150)
+                                       
+                                        
                                     }
 
                                 }.padding(.leading)
                                 
                                 HStack (spacing: 30) {
                                     ForEach(0 ..< 2) { i in
-                                        ProductCardView(image: Image("chair_2"), size: 130)
+                                        ProductCardView(image: Image("chair_2"), size: 150)
                                     }
                                 }.padding(.leading)
                                 HStack (spacing: 30) {
                                     ForEach(0 ..< 2) { i in
-                                        ProductCardView(image: Image("chair_3"), size: 130)
+                                        ProductCardView(image: Image("chair_3"), size: 150)
                                     }
                                 }.padding(.leading)
                             }
@@ -124,11 +128,10 @@ struct AppBarView: View {
 }
 struct TagLineView: View {
     var body: some View {
-        Text("Market place")
-            .font(.custom("PlayfairDisplay-Regular", size: 28))
+        Text("Marketplace")
+//            .font(.custom("PlayfairDisplay-Regular", size: 28))
             
-            .font(.custom("PlayfairDisplay-Bold", size: 28))
-            .fontWeight(.bold)
+            .font(.system(size: 36, weight: .bold, design: .default))
             .foregroundColor(Color("Brown"))
             
     }
@@ -177,6 +180,37 @@ struct CategoryView: View {
     }
 }
 
+struct ProductCardViewHorizontal: View {
+    let image: Image
+    let size: CGFloat
+
+    var body: some View {
+        VStack {
+            image
+                .resizable()
+                .frame(width: size, height: 200 * (size/210))
+                .cornerRadius(20.0)
+            Text("Chair").font(.title3).fontWeight(.bold)
+
+            HStack (spacing: 7) {
+                ForEach(0 ..< 5) { item in
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                        .frame(width: 14, height: 15)
+                }
+                Spacer()
+                Text("$1000")
+                    .font(.title3)
+                    .fontWeight(.light)
+            }
+        }
+        .frame(width: size)
+        .padding()
+        .background(Color.white)
+        .cornerRadius(20.0)
+
+    }
+}
 struct ProductCardView: View {
     let image: Image
     let size: CGFloat
@@ -189,14 +223,16 @@ struct ProductCardView: View {
                 .cornerRadius(20.0)
             Text("Chair").font(.title3).fontWeight(.bold)
 
-            HStack (spacing: 2) {
+            HStack (spacing: 9) {
                 ForEach(0 ..< 5) { item in
-                    Image("star")
+                    Image(systemName: "star.fill")
+                        .foregroundColor(.yellow)
+                        .frame(width: 6, height: 6)
                 }
                 Spacer()
                 Text("$1000")
                     .font(.title3)
-                    .fontWeight(.bold)
+                    .fontWeight(.light)
             }
         }
         .frame(width: size)
