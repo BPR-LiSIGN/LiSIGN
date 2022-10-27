@@ -38,7 +38,11 @@ enum TabBarItem: Hashable {
         case .Rooms: return Color.red
         case .Marketplace: return Color.blue
         case .Objects: return Color.orange
-        case .Favorites: return Color.cyan
+        case .Favorites: return Color.green
+//          case .Rooms: return Color("CustomGray")
+//          case .Marketplace: return Color("CustomGray")
+//          case .Objects: return Color("CustomGray")
+//          case .Favorites: return Color("CustomGray")
         }
     }
 }

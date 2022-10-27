@@ -45,6 +45,8 @@
 		2F76CBF028EDB18700ED7F9C /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */; };
 		2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */; };
 		2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */; };
+		2FD28ACF290B0F740086DD6F /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD28ACE290B0F740086DD6F /* FavouritesView.swift */; };
+		2FD28AD1290B0FF50086DD6F /* SmallCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD28AD0290B0FF50086DD6F /* SmallCardView.swift */; };
 		A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663828E2F5C800F59461 /* LiSIGNApp.swift */; };
 		A461663B28E2F5C800F59461 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663A28E2F5C800F59461 /* ContentView.swift */; };
 		A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A461663C28E2F5CA00F59461 /* Assets.xcassets */; };
@@ -91,6 +93,8 @@
 		2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		2FD28ACE290B0F740086DD6F /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		2FD28AD0290B0FF50086DD6F /* SmallCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCardView.swift; sourceTree = "<group>"; };
 		A461663528E2F5C800F59461 /* LiSIGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiSIGN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461663828E2F5C800F59461 /* LiSIGNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNApp.swift; sourceTree = "<group>"; };
 		A461663A28E2F5C800F59461 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +174,7 @@
 				2F37678528FB23DE000050FE /* ProductCard.swift */,
 				2F6257AC2901469E002E9832 /* AddButton.swift */,
 				2F6257AE290147FE002E9832 /* SearchBar.swift */,
+				2FD28AD0290B0FF50086DD6F /* SmallCardView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
 				2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */,
+				2FD28ACE290B0F740086DD6F /* FavouritesView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -454,6 +460,8 @@
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
 				2F37678628FB23DE000050FE /* ProductCard.swift in Sources */,
 				2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */,
+				2FD28AD1290B0FF50086DD6F /* SmallCardView.swift in Sources */,
+				2FD28ACF290B0F740086DD6F /* FavouritesView.swift in Sources */,
 				2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */,
 				2F76CBE728ED925600ED7F9C /* HomePage.swift in Sources */,
 				A4F171A328E306A0006BE5B1 /* LoginPageModel.swift in Sources */,

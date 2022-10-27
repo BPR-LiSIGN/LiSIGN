@@ -12,6 +12,7 @@ struct AppTabBarView: View {
     // instances of each tab-view
     var roomsView = RoomsView()
     var marketPlaceView = MarketPlaceView()
+    var favouritesView = FavouritesView()
     
     var body: some View {
         CustomTabBarContainerView(selection: $tabSelection) {
@@ -27,7 +28,7 @@ struct AppTabBarView: View {
             Color.cyan
                 .tabBarItem(tab: .Objects, selection: $tabSelection)
             
-            Color.green
+            favouritesView
                 .tabBarItem(tab: .Favorites, selection: $tabSelection)
         }
     }
