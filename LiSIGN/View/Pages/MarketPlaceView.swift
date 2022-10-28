@@ -132,7 +132,7 @@ struct TagLineView: View {
 //            .font(.custom("PlayfairDisplay-Regular", size: 28))
             
             .font(.system(size: 36, weight: .bold, design: .default))
-            .foregroundColor(Color("Brown"))
+            .foregroundColor(Color("CustomGray"))
             
     }
 }
