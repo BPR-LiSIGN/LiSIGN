@@ -9,11 +9,12 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseCore
 import Firebase
+import FirebaseDatabase
 
 class LoginPageModel: ObservableObject {
     
     // Login Properties...
-    @Published var email: String = ""
+     var email: String = ""
     @Published var password: String = ""
     @Published var showPassword: Bool = false
     
@@ -22,9 +23,11 @@ class LoginPageModel: ObservableObject {
     @Published var re_Enter_Password: String = ""
     @Published var showReEnterPassword: Bool = false
      var errorText: Bool = false
+    private let database = Database.database().reference()
     
     // Login Call...
     func Login(){
+        
         Auth.auth().signIn(withEmail:email, password: password)
         {
             result, error in
@@ -42,6 +45,13 @@ class LoginPageModel: ObservableObject {
     }
     func ForgotPassword(){
         // Do Action here...
+    }
+    @objc  func addUser() {
+        let object: [String: Any] = [
+            "email" : email as NSObject,
+            "name" : "lenka"
+        ]
+        database.child("user_\(Int.random(in: 0 ..< 100))").setValue(object)
     }
     
     }

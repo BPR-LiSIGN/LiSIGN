@@ -19,16 +19,18 @@
 	<key>STORAGE_BUCKET</key>
 	<string>lisign-31e67.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_ANALYTICS_ENABLED</key>
-	<false></false>
+	<false/>
 	<key>IS_APPINVITE_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_GCM_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>IS_SIGNIN_ENABLED</key>
-	<true></true>
+	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:523633549655:ios:d6bb38996224601e2dde12</string>
+	<key>DATABASE_URL</key>
+	<string>https://lisign-31e67-default-rtdb.europe-west1.firebasedatabase.app/</string>
 </dict>
 </plist>

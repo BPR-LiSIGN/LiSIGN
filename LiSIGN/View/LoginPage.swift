@@ -4,10 +4,12 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct LoginPage: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
     @State var showHomePage: Bool = false
+
 
     var body: some View {
         
@@ -61,12 +63,16 @@ struct LoginPage: View {
                     Button {
                         if loginData.registerUser{
                             loginData.Register()
+                            loginData.addUser()
+
                             withAnimation{
                                 showHomePage = true
                             }
                             print(",ogin data. register")
                         } else {
                             loginData.Login()
+                            loginData.addUser()
+
                             withAnimation{
                                 showHomePage = true
                             }
