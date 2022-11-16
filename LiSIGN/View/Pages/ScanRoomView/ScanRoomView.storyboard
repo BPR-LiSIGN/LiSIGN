@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ARView-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ScanRoomView" id="BYZ-38-t0r" userLabel="ARView" customClass="RoomScanViewModel" customModule="LiSIGN" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pDv-4v-CSH">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-bN-ivP">
+                                <rect key="frame" x="0.0" y="47" width="390" height="783"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </arView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28S-lI-gMP" userLabel="Save Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="284" y="292" width="34" height="30"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0J-0e-RRw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l55-w1-dvd" userLabel="Plane Detection Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="228" y="182" width="146" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="146" id="pNp-jC-Cf4"/>
+                                </constraints>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="togglePlaneDetectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6M-0l-cSl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-l9-Sbs" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="284" y="372" width="39" height="30"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppV-5I-zqo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="eng-pw-LPV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="eng-pw-LPV" firstAttribute="trailing" secondItem="l55-w1-dvd" secondAttribute="trailing" constant="50" id="POH-yA-pPc"/>
+                            <constraint firstItem="fYp-l9-Sbs" firstAttribute="top" secondItem="28S-lI-gMP" secondAttribute="bottom" constant="50" id="bnE-O9-pfm"/>
+                            <constraint firstItem="l55-w1-dvd" firstAttribute="top" secondItem="eng-pw-LPV" secondAttribute="top" constant="622" id="n56-T5-bzw"/>
+                            <constraint firstItem="l55-w1-dvd" firstAttribute="leading" secondItem="28S-lI-gMP" secondAttribute="trailing" constant="50" id="oKy-kc-gTr"/>
+                            <constraint firstItem="28S-lI-gMP" firstAttribute="top" secondItem="l55-w1-dvd" secondAttribute="bottom" constant="65" id="sBF-v0-Ne8"/>
+                            <constraint firstItem="eng-pw-LPV" firstAttribute="bottom" secondItem="l55-w1-dvd" secondAttribute="bottom" constant="96" id="tXN-Ne-fnW"/>
+                            <constraint firstItem="fYp-l9-Sbs" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" constant="50" id="uFd-Vt-ltd"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="arView" destination="k4Z-bN-ivP" id="EeW-ii-L6y"/>
+                        <outlet property="planeDetectionButton" destination="l55-w1-dvd" id="n8V-Xt-Xde"/>
+                        <outlet property="resetButton" destination="fYp-l9-Sbs" id="Asq-Yt-JcD"/>
+                        <outlet property="saveButton" destination="28S-lI-gMP" id="2iY-0A-hbY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135.38461538461539" y="132.93838862559241"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="28S-lI-gMP">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+        <designable name="fYp-l9-Sbs">
+            <size key="intrinsicContentSize" width="39" height="30"/>
+        </designable>
+        <designable name="l55-w1-dvd">
+            <size key="intrinsicContentSize" width="34" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

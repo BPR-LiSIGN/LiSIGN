@@ -38,6 +38,7 @@
 		2F5F5EE328F1BCB500C56C6D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5F5EE228F1BCB500C56C6D /* TabBarItem.swift */; };
 		2F6257AD2901469E002E9832 /* AddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6257AC2901469E002E9832 /* AddButton.swift */; };
 		2F6257AF290147FE002E9832 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6257AE290147FE002E9832 /* SearchBar.swift */; };
+		2F6257C829094085002E9832 /* RoomScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6257C729094085002E9832 /* RoomScanViewModel.swift */; };
 		2F76CBE728ED925600ED7F9C /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBE628ED925600ED7F9C /* HomePage.swift */; };
 		2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBE828ED94B400ED7F9C /* RoomsView.swift */; };
 		2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */; };
@@ -45,6 +46,13 @@
 		2F76CBF028EDB18700ED7F9C /* CustomTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */; };
 		2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */; };
 		2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */; };
+		2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B007F29200D5B00208E67 /* RoomModel.swift */; };
+		2FA57FDD29151E3D00D8D4AF /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA57FDC29151E3D00D8D4AF /* FocusEntity */; };
+		2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */; };
+		2FA57FEB2918311900D8D4AF /* ScanRoomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */; };
+		2FB8A661291E68130044D2A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A660291E68130044D2A5 /* Extensions.swift */; };
+		2FB8A664291E68EA0044D2A5 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */; };
+		2FB8A666291E77120044D2A5 /* ScanRoomView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */; };
 		A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663828E2F5C800F59461 /* LiSIGNApp.swift */; };
 		A461663B28E2F5C800F59461 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663A28E2F5C800F59461 /* ContentView.swift */; };
 		A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A461663C28E2F5CA00F59461 /* Assets.xcassets */; };
@@ -82,6 +90,7 @@
 		2F5F5EE228F1BCB500C56C6D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		2F6257AC2901469E002E9832 /* AddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButton.swift; sourceTree = "<group>"; };
 		2F6257AE290147FE002E9832 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		2F6257C729094085002E9832 /* RoomScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomScanViewModel.swift; sourceTree = "<group>"; };
 		2F76CBE628ED925600ED7F9C /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; };
 		2F76CBE828ED94B400ED7F9C /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceView.swift; sourceTree = "<group>"; };
@@ -89,6 +98,12 @@
 		2F76CBEF28EDB18700ED7F9C /* CustomTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarView.swift; sourceTree = "<group>"; };
 		2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
+		2F9B007F29200D5B00208E67 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_CoachingOverlay.swift; sourceTree = "<group>"; };
+		2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRoomButtonsView.swift; sourceTree = "<group>"; };
+		2FB8A660291E68130044D2A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanRoomView.storyboard; sourceTree = "<group>"; };
 		A461663528E2F5C800F59461 /* LiSIGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiSIGN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461663828E2F5C800F59461 /* LiSIGNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNApp.swift; sourceTree = "<group>"; };
 		A461663A28E2F5C800F59461 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -128,6 +143,7 @@
 				2F5F5ECE28F0309F00C56C6D /* FirebaseInAppMessaging-Beta in Frameworks */,
 				2F5F5EC028F0309F00C56C6D /* FirebaseDatabaseSwift in Frameworks */,
 				2F5F5ECA28F0309F00C56C6D /* FirebaseFunctions in Frameworks */,
+				2FA57FDD29151E3D00D8D4AF /* FocusEntity in Frameworks */,
 				2F5F5EE028F0309F00C56C6D /* FirebaseStorageCombine-Community in Frameworks */,
 				2F5F5EDA28F0309F00C56C6D /* FirebaseRemoteConfig in Frameworks */,
 				2F5F5EB628F0309F00C56C6D /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -166,6 +182,7 @@
 				2F37678528FB23DE000050FE /* ProductCard.swift */,
 				2F6257AC2901469E002E9832 /* AddButton.swift */,
 				2F6257AE290147FE002E9832 /* SearchBar.swift */,
+				2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -173,6 +190,7 @@
 		2F6257AB290098DC002E9832 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2FB8A662291E68A40044D2A5 /* ScanRoomView */,
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
 				2F76CBEA28ED94C500ED7F9C /* MarketPlaceView.swift */,
@@ -190,6 +208,14 @@
 				2F5F5EE228F1BCB500C56C6D /* TabBarItem.swift */,
 			);
 			path = CustomTabBar;
+			sourceTree = "<group>";
+		};
+		2FB8A662291E68A40044D2A5 /* ScanRoomView */ = {
+			isa = PBXGroup;
+			children = (
+				2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */,
+			);
+			path = ScanRoomView;
 			sourceTree = "<group>";
 		};
 		A461662C28E2F5C800F59461 = {
@@ -215,6 +241,7 @@
 		A461663728E2F5C800F59461 /* LiSIGN */ = {
 			isa = PBXGroup;
 			children = (
+				2F9B007F29200D5B00208E67 /* RoomModel.swift */,
 				A4F171A528E306D4006BE5B1 /* Fonts */,
 				A4F171A428E306C4006BE5B1 /* View */,
 				A4F171A128E3066E006BE5B1 /* ViewModel */,
@@ -255,7 +282,11 @@
 		A4F171A128E3066E006BE5B1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */,
 				A4F171A228E306A0006BE5B1 /* LoginPageModel.swift */,
+				2F6257C729094085002E9832 /* RoomScanViewModel.swift */,
+				2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */,
+				2FB8A660291E68130044D2A5 /* Extensions.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -316,6 +347,7 @@
 				2F5F5EDB28F0309F00C56C6D /* FirebaseRemoteConfigSwift */,
 				2F5F5EDD28F0309F00C56C6D /* FirebaseStorage */,
 				2F5F5EDF28F0309F00C56C6D /* FirebaseStorageCombine-Community */,
+				2FA57FDC29151E3D00D8D4AF /* FocusEntity */,
 			);
 			productName = LiSIGN;
 			productReference = A461663528E2F5C800F59461 /* LiSIGN.app */;
@@ -391,6 +423,7 @@
 			mainGroup = A461662C28E2F5C800F59461;
 			packageReferences = (
 				2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2FA57FDB29151E3D00D8D4AF /* XCRemoteSwiftPackageReference "FocusEntity" */,
 			);
 			productRefGroup = A461663628E2F5C800F59461 /* Products */;
 			projectDirPath = "";
@@ -411,6 +444,7 @@
 				A4F171A628E306D4006BE5B1 /* Fonts in Resources */,
 				A4F171AE28E30710006BE5B1 /* bad3.png in Resources */,
 				A461664028E2F5CA00F59461 /* Preview Assets.xcassets in Resources */,
+				2FB8A666291E77120044D2A5 /* ScanRoomView.storyboard in Resources */,
 				A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,10 +472,14 @@
 			files = (
 				A461663B28E2F5C800F59461 /* ContentView.swift in Sources */,
 				A4F171AC28E306FF006BE5B1 /* OnBoardingPage.swift in Sources */,
+				2FA57FEB2918311900D8D4AF /* ScanRoomButtonsView.swift in Sources */,
+				2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */,
 				2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */,
 				2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */,
 				2F5F5EE328F1BCB500C56C6D /* TabBarItem.swift in Sources */,
 				A4F171A828E306EE006BE5B1 /* CustomCorners.swift in Sources */,
+				2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */,
+				2F6257C829094085002E9832 /* RoomScanViewModel.swift in Sources */,
 				A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */,
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
 				2F37678628FB23DE000050FE /* ProductCard.swift in Sources */,
@@ -450,9 +488,11 @@
 				2F76CBE728ED925600ED7F9C /* HomePage.swift in Sources */,
 				A4F171A328E306A0006BE5B1 /* LoginPageModel.swift in Sources */,
 				2F76CBEE28EDA5D600ED7F9C /* AppTabBarView.swift in Sources */,
+				2FB8A661291E68130044D2A5 /* Extensions.swift in Sources */,
 				2F76CBF028EDB18700ED7F9C /* CustomTabBarView.swift in Sources */,
 				2F6257AF290147FE002E9832 /* SearchBar.swift in Sources */,
 				2F6257AD2901469E002E9832 /* AddButton.swift in Sources */,
+				2FB8A664291E68EA0044D2A5 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +654,7 @@
 				DEVELOPMENT_TEAM = DR7VNX8CP9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -624,7 +665,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LiSIGN;
+				PRODUCT_BUNDLE_IDENTIFIER = LiSIGN1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -643,6 +684,7 @@
 				DEVELOPMENT_TEAM = DR7VNX8CP9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -653,7 +695,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = LiSIGN;
+				PRODUCT_BUNDLE_IDENTIFIER = LiSIGN1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -781,6 +823,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 9.0.0;
+			};
+		};
+		2FA57FDB29151E3D00D8D4AF /* XCRemoteSwiftPackageReference "FocusEntity" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/maxxfrazer/FocusEntity";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -920,6 +970,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		2FA57FDC29151E3D00D8D4AF /* FocusEntity */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2FA57FDB29151E3D00D8D4AF /* XCRemoteSwiftPackageReference "FocusEntity" */;
+			productName = FocusEntity;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
