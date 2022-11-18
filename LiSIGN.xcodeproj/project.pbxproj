@@ -49,7 +49,6 @@
 		2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B007F29200D5B00208E67 /* RoomModel.swift */; };
 		2FA57FDD29151E3D00D8D4AF /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA57FDC29151E3D00D8D4AF /* FocusEntity */; };
 		2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */; };
-		2FA57FEB2918311900D8D4AF /* ScanRoomButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */; };
 		2FB8A661291E68130044D2A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A660291E68130044D2A5 /* Extensions.swift */; };
 		2FB8A664291E68EA0044D2A5 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */; };
 		2FB8A666291E77120044D2A5 /* ScanRoomView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */; };
@@ -100,7 +99,6 @@
 		2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		2F9B007F29200D5B00208E67 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
 		2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_CoachingOverlay.swift; sourceTree = "<group>"; };
-		2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanRoomButtonsView.swift; sourceTree = "<group>"; };
 		2FB8A660291E68130044D2A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanRoomView.storyboard; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 				2F37678528FB23DE000050FE /* ProductCard.swift */,
 				2F6257AC2901469E002E9832 /* AddButton.swift */,
 				2F6257AE290147FE002E9832 /* SearchBar.swift */,
-				2FA57FEA2918311900D8D4AF /* ScanRoomButtonsView.swift */,
 			);
 			path = shared;
 			sourceTree = "<group>";
@@ -472,7 +469,6 @@
 			files = (
 				A461663B28E2F5C800F59461 /* ContentView.swift in Sources */,
 				A4F171AC28E306FF006BE5B1 /* OnBoardingPage.swift in Sources */,
-				2FA57FEB2918311900D8D4AF /* ScanRoomButtonsView.swift in Sources */,
 				2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */,
 				2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */,
 				2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */,
