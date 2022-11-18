@@ -21,12 +21,15 @@ struct RoomsView: View {
             VStack(alignment: .leading){
                 HStack {
                     SearchBar(searchText: $searchText, searching: $searching)
-                    NavigationLink (
-                        destination: storyboardview(),
-                        label: {
-                            ProductCard(image: "chair", title: "h", type: "j", price: 2)
-                        }
-                    )
+//                    NavigationLink (
+//                        destination: storyboardview(),
+//                        label: {
+//                            ProductCard(image: "chair", title: "h", type: "j", price: 2)
+//                        }
+//                    )
+                    NavigationLink("Scan Room") {
+                        storyboardview()
+                    }
                 }
             
                 List{
