@@ -4,9 +4,13 @@
 //
 
 import SwiftUI
+import FirebaseDatabase
 
 struct LoginPage: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
+    @State var showHomePage: Bool = false
+
+
     var body: some View {
         
         VStack{
@@ -59,8 +63,22 @@ struct LoginPage: View {
                     Button {
                         if loginData.registerUser{
                             loginData.Register()
+                            loginData.addUser()
+
+                            withAnimation{
+                                showHomePage = true
+                            }
+                            print(",ogin data. register")
                         } else {
                             loginData.Login()
+                            loginData.addUser()
+
+                            withAnimation{
+                                showHomePage = true
+                            }
+                            
+                            print("login data .login")
+
                         }
                     } label: {
                         Text("Login")
@@ -101,6 +119,15 @@ struct LoginPage: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.brown)
+        .overlay(
+            
+            Group{
+                if showHomePage{
+                    AppTabBarView()
+                        .transition(.move(edge: .bottom))
+                }
+            }
+        )
         
         // Clearing data when Changes...
         .onChange(of: loginData.registerUser) { newValue in
