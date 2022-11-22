@@ -14,6 +14,7 @@ struct AppTabBarView: View {
     var marketPlaceView = MarketPlaceView()
     
     var body: some View {
+        Sidebar()
         CustomTabBarContainerView(selection: $tabSelection) {
             // Color.blue
             roomsView

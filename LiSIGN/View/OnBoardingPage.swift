@@ -14,6 +14,8 @@ let customFont = "Raleway-VariableFont_wght"
 struct OnBoardingPage: View {
     // Showing Login Page...
     @State var showLoginPage: Bool = false
+    var loginViewModel = LoginPageModel()
+    
     var body: some View {
         VStack(alignment: .leading){
             Text("LiSIGN")
@@ -25,6 +27,7 @@ struct OnBoardingPage: View {
             
             Button {
                 // Not sure if this animation is working properly :/
+                loginViewModel.Logout()
                 withAnimation{
                     showLoginPage = true
                 }

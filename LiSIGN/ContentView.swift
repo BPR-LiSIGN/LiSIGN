@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    var sidebar = Sidebar()
     var body: some View {
-        OnBoardingPage()
+        // OnBoardingPage()
         // RoomsView()
+        sidebar
     }
 }
 

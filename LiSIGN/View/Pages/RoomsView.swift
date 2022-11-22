@@ -9,6 +9,9 @@ struct RoomsView: View {
     
     @State var searchText = ""
     @State var searching = false
+    // @State var showSidebar: Bool = false
+    
+    // let sidebar = Sidebar(showSidebar: $showSidebar)
     
     let myFruits = [
         "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
