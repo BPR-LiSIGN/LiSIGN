@@ -17,49 +17,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-bN-ivP">
-                                <rect key="frame" x="0.0" y="0.0" width="390" height="744"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <arView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4Z-bN-ivP">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="730"/>
                             </arView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28S-lI-gMP" userLabel="Save Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
-                                <rect key="frame" x="319" y="575" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l55-w1-dvd" userLabel="Plane Detection Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="195" y="279" width="179" height="35"/>
+                                <state key="normal" title="Start Plane Detection"/>
                                 <connections>
-                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0J-0e-RRw"/>
+                                    <action selector="togglePlaneDetectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6M-0l-cSl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-l9-Sbs" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
-                                <rect key="frame" x="317" y="657" width="39" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fYp-l9-Sbs" userLabel="Reset Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="289" y="444" width="87" height="35"/>
                                 <state key="normal" title="Reset"/>
                                 <connections>
                                     <action selector="resetButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppV-5I-zqo"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l55-w1-dvd" userLabel="Plane Detection Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
-                                <rect key="frame" x="302" y="504" width="72" height="39"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28S-lI-gMP" userLabel="Save Button" customClass="RoundedButton" customModule="LiSIGN" customModuleProvider="target">
+                                <rect key="frame" x="289" y="358" width="85" height="42"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="146" id="pNp-jC-Cf4"/>
+                                    <constraint firstAttribute="height" constant="36" id="DY0-KU-Ffl"/>
                                 </constraints>
-                                <state key="normal" title="Start"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="togglePlaneDetectionButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="m6M-0l-cSl"/>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="l0J-0e-RRw"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="eng-pw-LPV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="fYp-l9-Sbs" secondAttribute="trailing" constant="20" id="BjH-k0-hhX"/>
-                            <constraint firstItem="eng-pw-LPV" firstAttribute="trailing" secondItem="fYp-l9-Sbs" secondAttribute="trailing" constant="34" id="F5h-pN-xcQ"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="fYp-l9-Sbs" secondAttribute="bottom" constant="130" id="NAH-8a-XUC"/>
-                            <constraint firstItem="eng-pw-LPV" firstAttribute="trailing" secondItem="l55-w1-dvd" secondAttribute="trailing" constant="50" id="POH-yA-pPc"/>
-                            <constraint firstItem="eng-pw-LPV" firstAttribute="bottom" secondItem="fYp-l9-Sbs" secondAttribute="bottom" constant="123" id="YOm-WG-IqW"/>
-                            <constraint firstItem="fYp-l9-Sbs" firstAttribute="top" secondItem="28S-lI-gMP" secondAttribute="bottom" constant="50" id="bnE-O9-pfm"/>
-                            <constraint firstItem="l55-w1-dvd" firstAttribute="top" secondItem="eng-pw-LPV" secondAttribute="top" constant="622" id="n56-T5-bzw"/>
-                            <constraint firstItem="l55-w1-dvd" firstAttribute="leading" secondItem="28S-lI-gMP" secondAttribute="trailing" constant="50" id="oKy-kc-gTr"/>
-                            <constraint firstItem="28S-lI-gMP" firstAttribute="top" secondItem="l55-w1-dvd" secondAttribute="bottom" constant="65" id="sBF-v0-Ne8"/>
-                            <constraint firstItem="eng-pw-LPV" firstAttribute="bottom" secondItem="l55-w1-dvd" secondAttribute="bottom" constant="96" id="tXN-Ne-fnW"/>
-                            <constraint firstItem="fYp-l9-Sbs" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" constant="50" id="uFd-Vt-ltd"/>
+                            <constraint firstItem="l55-w1-dvd" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" constant="195" id="16Q-cA-xeL"/>
+                            <constraint firstItem="28S-lI-gMP" firstAttribute="top" secondItem="pDv-4v-CSH" secondAttribute="top" constant="364" id="1Ku-D9-kW2"/>
+                            <constraint firstItem="k4Z-bN-ivP" firstAttribute="trailing" secondItem="eng-pw-LPV" secondAttribute="trailing" id="LVs-Wv-7XN"/>
+                            <constraint firstItem="k4Z-bN-ivP" firstAttribute="top" secondItem="pDv-4v-CSH" secondAttribute="top" id="U3J-l7-Kxw"/>
+                            <constraint firstItem="eng-pw-LPV" firstAttribute="trailing" secondItem="l55-w1-dvd" secondAttribute="trailing" constant="16" id="XTw-8q-aKp"/>
+                            <constraint firstItem="l55-w1-dvd" firstAttribute="top" secondItem="pDv-4v-CSH" secondAttribute="topMargin" constant="232" id="a97-XM-KoB"/>
+                            <constraint firstItem="k4Z-bN-ivP" firstAttribute="leading" secondItem="eng-pw-LPV" secondAttribute="leading" id="dkR-gu-o4E"/>
+                            <constraint firstItem="28S-lI-gMP" firstAttribute="trailing" secondItem="l55-w1-dvd" secondAttribute="trailing" id="qOQ-pC-ruj"/>
+                            <constraint firstItem="eng-pw-LPV" firstAttribute="bottom" secondItem="k4Z-bN-ivP" secondAttribute="bottom" constant="80" id="rLA-yb-Dx7"/>
+                            <constraint firstItem="eng-pw-LPV" firstAttribute="bottom" secondItem="fYp-l9-Sbs" secondAttribute="bottom" constant="331" id="wRE-vD-QAS"/>
+                            <constraint firstItem="28S-lI-gMP" firstAttribute="top" secondItem="l55-w1-dvd" secondAttribute="bottom" constant="50" id="zC3-oQ-lqA"/>
                         </constraints>
                     </view>
                     <connections>
@@ -82,7 +81,7 @@
             <size key="intrinsicContentSize" width="39" height="30"/>
         </designable>
         <designable name="l55-w1-dvd">
-            <size key="intrinsicContentSize" width="34" height="30"/>
+            <size key="intrinsicContentSize" width="146" height="30"/>
         </designable>
     </designables>
     <resources>

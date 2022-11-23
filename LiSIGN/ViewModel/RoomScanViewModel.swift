@@ -123,7 +123,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
              All of the next steps, have to be done for every ARMeshAnchor we gathered earlier. We will need to convert the position of every vertex in its meash from local space to world space and write the result back into it's position in the vertex buffer.
              */
             // some short handles, otherwise stuff will get pretty long in a few lines
-            let geometry = meshAncor.geometry // In the sample it was meshAnchor.geometry
+            let geometry = meshAncor.geometry
             let vertices = geometry.vertices
             let faces = geometry.faces
             let verticesPointer = vertices.buffer.contents()
@@ -171,7 +171,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
                 vertexDescriptor.layouts[0] = MDLVertexBufferLayout(stride: meshAncor.geometry.vertices.stride)
 
                 // Finally creating the MDLMesh and adding it to the MDLAsset
-                let mesh = MDLMesh(vertexBuffer: vertexBuffer, vertexCount: meshAncor.geometry.vertices.count, descriptor: vertexDescriptor, submeshes: [submesh]) // in the example is meshAncor.geometry.vertices.count
+                let mesh = MDLMesh(vertexBuffer: vertexBuffer, vertexCount: meshAncor.geometry.vertices.count, descriptor: vertexDescriptor, submeshes: [submesh])
                 asset.add(mesh)
         }
 
@@ -193,6 +193,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
                     self.present(activityController, animated: true, completion: nil)
                 } catch let error {
                     fatalError(error.localizedDescription)
+                    print("UNABLE TO EXPORT. LOCALIZED-DESCRIPTION ERROR")
                 }
             } else {
                 fatalError("Can't export OBJ")
