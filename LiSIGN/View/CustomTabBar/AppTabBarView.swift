@@ -12,6 +12,7 @@ struct AppTabBarView: View {
     // instances of each tab-view
     var roomsView = RoomsView()
     var marketPlaceView = MarketPlaceView()
+    var productsView = ProductsView()
     
     var body: some View {
         CustomTabBarContainerView(selection: $tabSelection) {
@@ -24,11 +25,9 @@ struct AppTabBarView: View {
             marketPlaceView
                 .tabBarItem(tab: .Marketplace, selection: $tabSelection)
             
-            Color.cyan
+            productsView
                 .tabBarItem(tab: .Objects, selection: $tabSelection)
             
-            Color.green
-                .tabBarItem(tab: .Favorites, selection: $tabSelection)
         }
     }
 }
@@ -37,5 +36,6 @@ struct AppTabBar_Previews: PreviewProvider {
     
     static var previews: some View {
         AppTabBarView()
+            .environmentObject(ProductsViewModel())
     }
 }
