@@ -20,6 +20,11 @@ struct HomePage: View {
                     Image(systemName: "store")
                     Text("Marketplace")
                 }
+            ProductsView()
+                .tabItem{
+                    Image(systemName: "products")
+                    Text("Objects")
+                }
             
         }
     }

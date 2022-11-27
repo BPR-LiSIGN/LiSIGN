@@ -9,6 +9,7 @@ import FirebaseDatabase
 struct LoginPage: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
     @State var showHomePage: Bool = false
+    
 
 
     var body: some View {
@@ -68,7 +69,7 @@ struct LoginPage: View {
                             withAnimation{
                                 showHomePage = true
                             }
-                            print(",ogin data. register")
+                            print("Login data. register")
                         } else {
                             loginData.Login()
                             loginData.addUser()
