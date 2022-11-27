@@ -56,7 +56,9 @@ class LoginPageModel: ObservableObject {
             "roomId" : roomId + 1,
             "productId": productId + 1,
         ]
-        database.child("user").child(uid!).setValue(object)
+//        database.child("user").child(uid!).setValue(object)
+        database.child("user").setValue(object)
+
     }
 //    @objc func getUserInfo(){
 //        let database = Database.database().reference()
