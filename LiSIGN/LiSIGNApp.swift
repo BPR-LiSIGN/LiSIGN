@@ -16,7 +16,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     return true
   }
 }
-
+    
 @main
 struct LiSIGNApp: App {
     //follow the lifecycle of the app

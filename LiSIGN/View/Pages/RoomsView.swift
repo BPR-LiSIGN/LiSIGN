@@ -12,34 +12,32 @@ struct RoomsView: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
 
     
+    // var roomScanViewModel = RoomScanViewModel()
+    
     let myFruits = [
         "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
     ]
     
-    var body: some View{
-        // Text("RoomsView")
-        
+    var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 HStack {
                     SearchBar(searchText: $searchText, searching: $searching)
-                    Button("+") {
-                        /**
-                         right-click on the play button in the preview canvas and choose “Debug Preview”. With that small change made you’ll find your print() calls work as normal.
-                         */
-                        // Add here connection to the CameraView or the ViewModel
+//                    NavigationLink (
+//                        destination: storyboardview(),
+//                        label: {
+//                            ProductCard(image: "chair", title: "h", type: "j", price: 2)
+//                        }
+//                    )
+                    NavigationLink("Scan Room") {
+                        storyboardview()
                     }
-                    .cornerRadius(20)
-                    .buttonStyle(.borderedProminent)
-                    .tint(Color.accentColor)
-                    .padding(10)
                 }
-                // Color.red
+            
                 List{
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
-//                        // Text(fruit)
                         ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
 
                     }
@@ -56,13 +54,13 @@ struct RoomsView: View {
                         }
                     }
                 }
-                //.navigationTitle("Fruits")
                 .gesture(DragGesture()
                     .onChanged({ _ in
                         UIApplication.shared.dismissKeyboard()
                     }))
             }
             .navigationTitle(searching ? "Searching": "Rooms")
+            
             
         }
     }
@@ -71,6 +69,20 @@ struct RoomsView: View {
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
         RoomsView()
+    }
+}
+
+// For displaying the Storyboard for scanning rooms
+struct storyboardview: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let storyboard = UIStoryboard(name: "ScanRoomView", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "ScanRoomView")
+        
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // This remains empty
     }
 }
 
