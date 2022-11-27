@@ -9,6 +9,8 @@ struct RoomsView: View {
     
     @State var searchText = ""
     @State var searching = false
+    @StateObject var loginData: LoginPageModel = LoginPageModel()
+
     
     let myFruits = [
         "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"

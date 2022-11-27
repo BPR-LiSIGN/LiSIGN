@@ -28,8 +28,6 @@ struct AppTabBarView: View {
             productsView
                 .tabBarItem(tab: .Objects, selection: $tabSelection)
             
-            Color.green
-                .tabBarItem(tab: .Favorites, selection: $tabSelection)
         }
     }
 }
@@ -38,5 +36,6 @@ struct AppTabBar_Previews: PreviewProvider {
     
     static var previews: some View {
         AppTabBarView()
+            .environmentObject(ProductsViewModel())
     }
 }

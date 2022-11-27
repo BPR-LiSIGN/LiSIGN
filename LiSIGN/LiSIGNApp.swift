@@ -19,12 +19,15 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct LiSIGNApp: App {
-
+    //follow the lifecycle of the app
+    @StateObject var productsViewModel = ProductsViewModel()
+    
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
         
             ContentView()
+                .environmentObject(productsViewModel)
         }
     }
 }

@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct MarketPlaceView: View {
     @State private var search: String = ""
@@ -46,7 +47,7 @@ struct MarketPlaceView: View {
                             HStack (spacing: 0) {
                                 ForEach(0 ..< 4) { i in
                                     NavigationLink(
-                                        destination: CardDetailed(),
+                                        destination:AddProductView(),
                                         label: {
                                             ProductCardViewHorizontal(image: Image("chair_\(i+1)"), size: 200)
                                         })
@@ -136,6 +137,19 @@ struct TagLineView: View {
             
     }
 }
+
+struct storyboard: UIViewControllerRepresentable {
+  
+    func makeUIViewController(context content: Context) -> UIViewController {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "main")
+        return controller
+    }
+    func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
+        
+    }
+}
+
 
 struct SearchAndScanView: View {
     @Binding var search: String
