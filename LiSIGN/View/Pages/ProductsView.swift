@@ -35,8 +35,12 @@ struct ProductsView: View {
     var body: some View {
         NavigationView {
             ScrollView{
-                ProductList(products: productsViewModel.products)
-                
+                VStack{
+                    NavigationLink("Scan Room") {
+                        storyboardview()
+                    }
+                    ProductList(products: productsViewModel.products)
+                }
             }.navigationViewStyle(.stack)
             //        NavigationView {
             //            List(Product.all) { product in
@@ -181,6 +185,21 @@ struct ProductsView: View {
         //    }
     }
 }
+
+// For displaying the Storyboard for scanning objects
+struct storyboardview2: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let storyboard = UIStoryboard(name: "ScanRoomView", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "ScanObjectView")
+        
+        return controller
+    }
+    
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // This remains empty
+    }
+}
+
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View{
         ProductsView()

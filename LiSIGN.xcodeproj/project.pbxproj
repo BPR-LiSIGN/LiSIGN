@@ -81,6 +81,7 @@
 		2FFADF4B2933D45E002400F4 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5F5EDB28F0309F00C56C6D /* FirebaseRemoteConfigSwift */; };
 		2FFADF4C2933D45E002400F4 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5F5EDD28F0309F00C56C6D /* FirebaseStorage */; };
 		2FFADF4D2933D45E002400F4 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 2F5F5EDF28F0309F00C56C6D /* FirebaseStorageCombine-Community */; };
+		2FFADF532934CB0F002400F4 /* ScanObjectView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FFADF522934CB0F002400F4 /* ScanObjectView.storyboard */; };
 		A4305B0829094E0C00E6A41B /* ProductsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4305B0729094E0C00E6A41B /* ProductsView.swift */; };
 		A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663828E2F5C800F59461 /* LiSIGNApp.swift */; };
 		A461663B28E2F5C800F59461 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A461663A28E2F5C800F59461 /* ContentView.swift */; };
@@ -143,6 +144,7 @@
 		2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2FB8A665291E77120044D2A5 /* ScanRoomView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanRoomView.storyboard; sourceTree = "<group>"; };
 		2FFADF4E2933D7EB002400F4 /* trial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = trial.swift; path = ../trial.swift; sourceTree = "<group>"; };
+		2FFADF522934CB0F002400F4 /* ScanObjectView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanObjectView.storyboard; sourceTree = "<group>"; };
 		A4305B0729094E0C00E6A41B /* ProductsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsView.swift; sourceTree = "<group>"; };
 		A461663528E2F5C800F59461 /* LiSIGN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiSIGN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A461663828E2F5C800F59461 /* LiSIGNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiSIGNApp.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		2F6257AB290098DC002E9832 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2FFADF522934CB0F002400F4 /* ScanObjectView.storyboard */,
 				2FB8A662291E68A40044D2A5 /* ScanRoomView */,
 				2F76CBE628ED925600ED7F9C /* HomePage.swift */,
 				2F76CBE828ED94B400ED7F9C /* RoomsView.swift */,
@@ -538,6 +541,7 @@
 				A4F171A628E306D4006BE5B1 /* Fonts in Resources */,
 				A4F171AE28E30710006BE5B1 /* bad3.png in Resources */,
 				A461664028E2F5CA00F59461 /* Preview Assets.xcassets in Resources */,
+				2FFADF532934CB0F002400F4 /* ScanObjectView.storyboard in Resources */,
 				2FB8A666291E77120044D2A5 /* ScanRoomView.storyboard in Resources */,
 				A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */,
 				2F0B6189292C13500009CF9A /* GoogleService-Info.plist in Resources */,
