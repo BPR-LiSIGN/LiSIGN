@@ -21,7 +21,7 @@ extension RoomScanViewModel: ARCoachingOverlayViewDelegate {
         saveButton.isHidden = false
     }
     
-    func coachingOverlayViewRequestSessionReset(_ coachingOverlayView: ARCoachingOverlayView) {
+    func coachingOverlayViewDidRequestSessionReset(_ coachingOverlayView: ARCoachingOverlayView) {
         resetButtonPressed(self)
     }
     
