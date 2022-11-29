@@ -9,6 +9,7 @@ import ARKit
 import ModelIO
 import MetalKit
 import QuickLook
+import FirebaseAuth
 
 
 class RoomScanViewModel: UIViewController, ARSessionDelegate {
@@ -17,6 +18,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var planeDetectionButton: UIButton!
     @IBOutlet weak var saveButton: RoundedButton!
+    // var roomRepository = RoomRepository() // I don't think this is the right use of Singleton pattern
     
     let coachingOverlay = ARCoachingOverlayView()
     
@@ -185,6 +187,12 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
             // Finally creating the MDLMesh and adding it to the MDLAsset
             let mesh = MDLMesh(vertexBuffer: vertexBuffer, vertexCount: meshAncor.geometry.vertices.count, descriptor: vertexDescriptor, submeshes: [submesh])
             asset.add(mesh)
+            
+            // var roomModel = Room(name: "scanned_room", image: "", type: "Bedroom", roomObject: asset)
+            // Call next layer to store room
+            let roomModel = Room(roomObject: asset)
+            let uid = Auth.auth().currentUser?.uid
+            RoomRepository.shared.addRoom(_roomId: roomModel.roomId, _roomObject: roomModel)
         }
         
         /**
@@ -237,3 +245,27 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
     } // End of session function
     
 }
+
+//class Room {
+//    private var _id: UUID = UUID()    // Maybe we don't need an id at all
+//    private var _title: String = ""
+//    private var _image: String = ""
+//    private var _type: String = ""
+//    private var _roomObject: MDLAsset // MDLAsset is the type that LiDAR gives back for the 3D room scan
+//
+//    init(title: String, image: String, type: String, roomObject: MDLAsset) {
+//        self._roomObject = roomObject
+//        // For now, the rest of the properties are hardcoded
+//        // self._title = "Scan 1"
+//        self._title = title
+//        // self._type = "Room"
+//        self._type = type
+//    }
+//
+//    init(roomObject: MDLAsset) {
+//        self._roomObject = roomObject
+//        self._title = "Scan 1"
+//        self._type = "Bedoom"
+//        self._image = "" // TODO: Replace with some image from Assets
+//    }
+//}
