@@ -1,6 +1,7 @@
 //
 //  RoomRepository.swift
 //  LiSIGN
+// This class adds a layer between the data and the user.
 //
 
 import Foundation
@@ -19,8 +20,8 @@ class RoomRepository: ObservableObject {
         RoomDAO.shared.addRoomToDB(_roomId: _roomId, _roomObject: _roomObject)
     }
     
-    func getRoom(_roomObject: Room) { // Not sure if I need the userID or create a roomId
-        RoomDAO.shared.getRoomFromDB(_roomObject: _roomObject)
+    func getRoom(_roomId: String) { // Not sure if I need the userID or create a roomId
+        RoomDAO.shared.getRoomFromDB(_roomId: _roomId)
     }
     
     func getAllRooms() {

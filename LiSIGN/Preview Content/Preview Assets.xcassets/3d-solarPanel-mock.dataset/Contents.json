@@ -1,0 +1,13 @@
+{
+  "data" : [
+    {
+      "filename" : "solar_panels_stylized.usdz",
+      "idiom" : "universal",
+      "universal-type-identifier" : "com.pixar.universal-scene-description-mobile"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

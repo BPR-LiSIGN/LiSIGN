@@ -1,0 +1,13 @@
+{
+  "data" : [
+    {
+      "filename" : "LunarRover_English (1).reality",
+      "idiom" : "universal",
+      "universal-type-identifier" : "com.apple.reality"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

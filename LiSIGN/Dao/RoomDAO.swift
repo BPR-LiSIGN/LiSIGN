@@ -20,7 +20,7 @@ class RoomDAO {
     
     // CREATE
     func addRoomToDB(_roomId: String, _roomObject: Room) {
-        database.child("user").child(userId!).child("scanned-rooms").child("room-id").child(_roomId).setValue(_roomObject, withCompletionBlock: { err, ref in
+        database.child("user").child(userId!).child("scanned-rooms").child(_roomId).setValue(_roomObject, withCompletionBlock: { err, ref in
             if let error = err {
                 print("scannedRoom was not saved: \(error.localizedDescription)")
             } else {
@@ -30,23 +30,33 @@ class RoomDAO {
     }
     
     // READ
-    func getRoomFromDB(_roomObject: Room) {
-//        let databaseHandle = database.observe(DataEventType.value, with: { snapshot in
-//
-//        })
+    func getRoomFromDB(_roomId: String) {
+        let roomRef = self.database.child("user").child(userId!).child("scanned-rooms").child(_roomId)
+        
+        roomRef.observeSingleEvent(of: .value, with: { snapshot in
+            let roomDict = snapshot.value as! [String: Any]
+            let title = roomDict["title"] as! String
+            let image = roomDict["image"] as! String
+            let type = roomDict["type"] as! String
+            let roomObject = roomDict["roomObject"]! as AnyObject // Should be MDLAsset
+            print(roomDict, title, image, type, roomObject)
+        })
+        
     }
-    
-    func getAllRoomsFromDB() { // Change this to do roomObjects instead of Users
-//        database.child("user").child(userId!).observeSingleEvent(of: .value, with: { snapshot in
-//            // Get user value
-//            let value = snapshot.value as? NSDictionary
-//            // let _username = value?["username"] as? String ?? ""
-//            // let user = User(username: _username)
-//
-//            // ..
-//        }) { error in
-//            print(error.localizedDescription)
-//        }
+    func getAllRoomsFromDB() {
+        let allRooms = self.database.child("user").child(userId!).child("scanned-rooms")
+        
+        allRooms.observeSingleEvent(of: .value, with: { snapshot in
+            for child in snapshot.children {
+                let snap = child as! DataSnapshot
+                let roomDict = snap.value as! [String: Any] // Maybe this should be Room??
+                let title = roomDict["title"] as! String
+                let image = roomDict["image"] as! String
+                let type = roomDict["type"] as! String
+                let roomObject = roomDict["roomObject"]! as AnyObject // Should be MDLAsset
+                print(roomDict, title, image, type, roomObject)
+            }
+        })
     }
     
     // DELETE
