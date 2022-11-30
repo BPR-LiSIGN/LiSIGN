@@ -19,6 +19,10 @@ class LoginPageModel: ObservableObject {
     @Published var showPassword: Bool = false
     @Published var roomId: Int = 789
     @Published var productId: Int  = 0
+    @Published var uid = Auth.auth().currentUser?.uid
+    @Published var emailss = Auth.auth().currentUser?.email
+
+
     
     // Register Properties
     @Published var registerUser: Bool = false
@@ -49,6 +53,7 @@ class LoginPageModel: ObservableObject {
     }
     @objc  func addUser() {
         let uid = Auth.auth().currentUser?.uid
+        let _email = Auth.auth().currentUser?.email
         print(email)
         let object: [String: Any] = [
             "email" : email,
@@ -56,49 +61,18 @@ class LoginPageModel: ObservableObject {
             "roomId" : roomId + 1,
             "productId": productId + 1,
         ]
-//        database.child("user").child(uid!).setValue(object)
-        database.child("user").setValue(object)
+        
+        //this one is for scanned rooms with object of room
+        database.child("user").child("user id").child("scanned rooms").child("room id").setValue(object)
+        
+        //this one is for products rooms with object of product
+        database.child("user").child("user id").child("scanned objects").child("object id").setValue(object)
 
+
+//        database.child("user").child(uid!).setValue(object)
+        print("-------user id is: " + uid!)
     }
-//    @objc func getUserInfo(){
-//        let database = Database.database().reference()
-//
-//        let defaults = UserDefaults.standard
-//        guard let uid = Auth.auth().currentUser?.uid else {
-//            print("user doesn't exist")
-//            return
-//        }
-//        database.child("user").child(uid).getData{(error,snapshot) in
-//            if let error = error {
-//                print("Error getting data \(error)")
-//            }
-//            else {
-//           snapshot.value as? String
-//
-//                print(snapshot.value!)
-//                            }
-//
-//        }
-//        (.value, with: {(snapshot) in
-//            if let dictionary = snapshot.value as? [String: Any] {
-//                let email = dictionary["email"] as! String
-//
-//                defaults.set(email, forKey: "userEmailKey")
-//
-//            }
-//        })
-                                  
-//        self.ref.child("users/\(user.uid)/username").getData { (error, snapshot) in
-//            if let error = error {
-//                print("Error getting data \(error)")
-//            }
-//            else if snapshot.exists() {
-//                print("Got data \(snapshot.value!)")
-//            }
-//            else {
-//                print("No data available")
-//            }
-//        }
+   
                                                   
     
     

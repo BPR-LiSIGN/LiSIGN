@@ -12,12 +12,11 @@ import FirebaseDatabase
 
 struct ProductDetailCard: View {
     var product: Product
-    var ref = Database.database().reference()
-    
     
     @State var _name: String = ""
     @State var _description: String = ""
     @State var _info : String = ""
+    var vm = ProductsViewModel()
     
 //    func observeProducts(){
 //        let productsRef = Database.database().reference().child("Product")
@@ -47,13 +46,7 @@ struct ProductDetailCard: View {
     var body: some View {
         ScrollView{
           
-            AsyncImage(url: URL(string: product.image)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                  
-            }
-        placeholder: {
+        placeholder: do {
                 Image(systemName: "lamp.desk")
                 .resizable()
                 .scaledToFit()
@@ -63,12 +56,16 @@ struct ProductDetailCard: View {
                
             
         }
-        .frame(height: 300)
-        .background(Color.purple)
             
             VStack(spacing:30)
             {
-                
+                Button {
+                    vm.getProduct(id: "1")
+                }
+            label: {
+                Label("update", systemImage: "checkmark")
+                    .labelStyle(.iconOnly)
+            }
                 Text(product.name)
                     .font(.largeTitle)
                     .bold()
@@ -84,13 +81,7 @@ struct ProductDetailCard: View {
                             .font(.headline)
                         Text(product.info)
                     }
-                    Button{
-//                        ReadProductsViewModel().observeProducts()
-                        print("pressedd in product detail card")
-                    } label: {
-                        Text("Update")
-                    }
-                   
+                 
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
             }
@@ -103,6 +94,6 @@ struct ProductDetailCard: View {
 struct ProductDetailCard_Previews: PreviewProvider{
     static var previews: some View {
         
-        ProductDetailCard(product: Product.all[0])
+        ProductDetailCard(product: Product(name: "test name", description: "test desc", info: "test info"))
     }
 }
