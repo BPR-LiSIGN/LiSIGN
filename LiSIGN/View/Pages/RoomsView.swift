@@ -16,8 +16,7 @@ struct RoomsView: View {
     
     let myFruits = [
         "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
-    ]
-    
+    ]    
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
@@ -35,7 +34,7 @@ struct RoomsView: View {
                 }
             
                 List{
-                    ForEach(myFruits.filter({ (fruit: String) -> Bool in
+                    ForEach(myFruits.filter({ (fruit: String) -> Bool in // Substitute myFruits array with user's rooms array
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
                         ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)

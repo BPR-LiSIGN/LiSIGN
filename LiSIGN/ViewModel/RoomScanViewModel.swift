@@ -187,10 +187,12 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
             // Finally creating the MDLMesh and adding it to the MDLAsset
             let mesh = MDLMesh(vertexBuffer: vertexBuffer, vertexCount: meshAncor.geometry.vertices.count, descriptor: vertexDescriptor, submeshes: [submesh])
             asset.add(mesh)
+            // asset.loadTextures()
             
-            // var roomModel = Room(name: "scanned_room", image: "", type: "Bedroom", roomObject: asset)
+            print(asset)
+            
             // Call next layer to store room
-            let roomModel = Room(roomObject: asset)
+            let roomModel = Room(title: "scannedRoom", image: "", type: "Bedroom", roomObject: asset)
             let uid = Auth.auth().currentUser?.uid
             RoomRepository.shared.addRoom(_roomId: roomModel.roomId, _roomObject: roomModel)
         }
