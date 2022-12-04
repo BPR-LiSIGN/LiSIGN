@@ -12,20 +12,14 @@ struct ProductCard_: View {
     
     var body: some View {
         VStack {
-            AsyncImage(url: URL(string: product.image)) { image in
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .overlay(alignment: .bottom) {
-                        Text(product.name)
-                            .font(.headline)
-                            .foregroundColor(.white)
-                            .shadow(color:.black, radius:3, x:0, y:0)
-                            .frame(maxWidth: 136)
-                            .padding()
-                    }
+            Button {
+                //like
+            } label: {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(.red.opacity(0.9))
+                    .padding()
             }
-        placeholder: {
+            // AsyncImage(url: URL(string: product.image)) { image in cimage
             Image(systemName: "lamp.desk")
                 .resizable()
                 .scaledToFit()
@@ -33,21 +27,28 @@ struct ProductCard_: View {
                 .foregroundColor(.white.opacity(0.7))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .overlay(alignment: .bottom) {
-                    Text(product.name)
-                        .font(.headline)
-                        .foregroundColor(.white)
-                        .shadow(color:.black, radius:3, x:0, y:0)
-                        .frame(maxWidth: 136)
-                        .padding()
+                    HStack {
+                        Text(product.name)
+                            .font(.headline)
+                            .foregroundColor(.gray)
+                            .shadow(color:.white, radius:3, x:0, y:0)
+                            .frame(maxWidth: 136)
+                            .padding()
+                        Button{
+                            //delete it
+                        } label:{
+                            Image(systemName: "trash")
+                                .foregroundColor(.black.opacity(0.9))
+                        }.padding()
+                    
+                    }
                 }
-            
-        }
     }
         .frame(width: 160, height: 217, alignment: .top)
-        .background(Color(.purple))
+        .background(Color(.white))
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         .shadow(radius: 15)
-}
+    }
 }
 
  struct ProductCard__Previews: PreviewProvider {

@@ -51,61 +51,27 @@ struct ProductList: View {
     
     
     var body: some View {
-            VStack{
-                HStack {
-                    ForEach(0 ..< categories_.count) { i in
-                        Button(action: {selectedIndex = i}) {
-                            CategoryView_(isActive: selectedIndex == i, text: categories_[i])
-                        }
-                    }
-                    
-                   
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)],spacing: 15){
+//                products.count
+                ForEach(products, id: \.name) { product in
+                    NavigationLink(destination: ProductDetailCard(product: product)) {
+                        ProductCard_(product: product)
+                    }.padding(.top) .padding(.bottom)
+                }
+//                ForEach(0..<10, id: \.self ) { product in
                 
-                        
-                    }
-//                NavigationView{
-//                    NavigationLink(
-//                        "add", destination: AddProductView())
-//
-//
+//                    ProductCard_(product: product)
+//                Button(action: {selectedIndex = i}) {
+//                    CategoryView_(isActive: selectedIndex == i, text: categories_[i])
+//                    if(selectedIndex == 2){ FavoritesView()}
 //                }
-                
-                HStack {
-                    
-                    Text(testName)
-//                        "\(products.count) \(products.count > 1 ? "products" : " product")")
-                        .font(.headline)
-                        .fontWeight(.medium)
-                        .opacity(0.7)
-                    
-                    Spacer()
-//                    if test._name != nil {
-//                        Text(test._name!)
-//                                            } else {
-//                        Text("Nothing")
-//                    }
-                }
-                Button{
-                    
-                    observeProducts()
-                    print("pressedd")
-                } label: {
-                    Text("Read")
-                }
-                LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)],spacing: 15)
-                {
-                    ForEach(products, id: \.name) { product in
-                        NavigationLink(destination: ProductDetailCard(product: product)) {
-                            ProductCard_(product: product)
-                        }
-                    }
-                    .padding(.top)
-                }
-                .padding(.horizontal)
-            }
-        
-        
-        
+            
+            
+            }.padding(.horizontal)
+             
+        }
+    
     }
     struct ProductList_Previews: PreviewProvider {
         static var previews: some View {
@@ -123,8 +89,8 @@ struct ProductList: View {
                 Text(text)
                     .font(.system(size: 18))
                     .fontWeight(.medium)
-                    .foregroundColor(isActive ? Color("Brown") : Color.black.opacity(0.5))
-                if (isActive) { Color("Brown")
+                    .foregroundColor(isActive ? Color(.brown) : Color.black.opacity(0.5))
+                if (isActive) { Color(.brown)
                         .frame(width: 15, height: 2)
                         .clipShape(Capsule())
                 }

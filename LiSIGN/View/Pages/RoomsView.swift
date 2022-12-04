@@ -31,7 +31,7 @@ struct RoomsView: View {
 //                    )
                     NavigationLink("Scan Room") {
                         storyboardview()
-                    }
+                    }.padding()
                 }
             
                 List{
@@ -59,6 +59,7 @@ struct RoomsView: View {
                         UIApplication.shared.dismissKeyboard()
                     }))
             }
+            
             .navigationTitle(searching ? "Searching": "Rooms")
             
             

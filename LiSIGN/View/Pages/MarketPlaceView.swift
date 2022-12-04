@@ -11,7 +11,6 @@ struct MarketPlaceView: View {
     @State private var searching = false
     @State private var selectedIndex: Int = 1
     var cardDetailed = [CardDetailed()];
-    private let categories = ["Chair", "Sofa", "Lamp", "Kitchen"]
     var body: some View {
         NavigationView {
             ZStack {
@@ -21,28 +20,15 @@ struct MarketPlaceView: View {
                 ScrollView (showsIndicators: false) {
                     VStack (alignment: .leading) {
                         
-                        
-                        TagLineView()
-                            .padding()
-                        
-                        SearchBar(searchText: $search, searching: $searching)
-                        
-                        ScrollView (.horizontal, showsIndicators: false) {
-                            HStack {
-                                ForEach(0 ..< categories.count) { i in
-                                    Button(action: {selectedIndex = i}) {
-                                        CategoryView(isActive: selectedIndex == i, text: categories[i])
-                                    }
-                                }
-                            }
-                            .padding()
-                        }
-                        
-                        Text("Bestsellers")
-                            .font(.system(size: 30, weight: .medium, design: .default))
-                            .padding(.horizontal)
-                                                        
 
+                        TagLineView()
+//                            .padding()
+                        Text("Market place").font(.system(size: 30, weight: .bold, design: .default))
+                            .padding(.horizontal)
+
+                        SearchBar(searchText: $search, searching: $searching)
+    
+                        
                         ScrollView (.horizontal, showsIndicators: false) {
                             HStack (spacing: 0) {
                                 ForEach(0 ..< 4) { i in
@@ -176,23 +162,6 @@ struct SearchAndScanView: View {
     }
 }
 
-struct CategoryView: View {
-    let isActive: Bool
-    let text: String
-    var body: some View {
-        VStack (alignment: .leading, spacing: 0) {
-            Text(text)
-                .font(.system(size: 18))
-                .fontWeight(.medium)
-                .foregroundColor(isActive ? Color("Brown") : Color.black.opacity(0.5))
-            if (isActive) { Color("Brown")
-                .frame(width: 15, height: 2)
-                .clipShape(Capsule())
-            }
-        }
-        .padding(.trailing)
-    }
-}
 
 struct ProductCardViewHorizontal: View {
     let image: Image
