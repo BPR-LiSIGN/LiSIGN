@@ -31,7 +31,7 @@ class RoomDAO {
 //            }
 //        })
         guard _roomObject != nil else {return}
-        let roomObjectData = _roomObject.
+        let roomObjectData = _roomObject.roomObject
         storage.child("3d-scanned-rooms/")
     }
     

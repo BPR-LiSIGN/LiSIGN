@@ -18,6 +18,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var planeDetectionButton: UIButton!
     @IBOutlet weak var saveButton: RoundedButton!
+    let dateFormatter = DateFormatter()
     // var roomRepository = RoomRepository() // I don't think this is the right use of Singleton pattern
     
     let coachingOverlay = ARCoachingOverlayView()
@@ -190,9 +191,11 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
             // asset.loadTextures()
             
             print(asset)
+            dateFormatter.dateFormat = "HH-mm-ss"
             
             // Call next layer to store room
-            let roomModel = Room(title: "scannedRoom", image: "", type: "Bedroom", roomObject: asset)
+            // scanName = "Scan_\(dateFormatter.string(from: Date()))"
+            let roomModel = Room(title: "ScannedRoom_\(dateFormatter.string(from: Date()))", image: "", type: "Bedroom", roomObject: asset)
             let uid = Auth.auth().currentUser?.uid
             RoomRepository.shared.addRoom(_roomId: roomModel.roomId, _roomObject: roomModel)
         }
