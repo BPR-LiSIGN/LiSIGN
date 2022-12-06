@@ -25,9 +25,10 @@ struct LiSIGNApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-        
-            ContentView()
-                .environmentObject(productsViewModel)
+            NavigationView{
+                ContentView()
+                    .environmentObject(productsViewModel)
+            }
         }
     }
 }

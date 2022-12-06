@@ -11,6 +11,7 @@ import FirebaseDatabase
 
 
 struct ProductList: View {
+    
     @State private var selectedIndex: Int = 1
     @State var showAddProduct: Bool = false
 //    var products = [Product]()
@@ -21,43 +22,71 @@ struct ProductList: View {
     private let categories_ = ["Products", "Favorites"]
  
     
-    @StateObject private var viewmodelProduct = ProductsViewModel()
+    @ObservedObject  var viewmodelProduct = ProductsViewModel()
+    var products = ProductsViewModel().products
 
     
     var body: some View {
-        NavigationView {
-            List(viewmodelProduct.products) { product in
-                HStack {
-                    VStack(alignment: .leading) {
-                        Text(product.name).font(.title3).bold()
-                    }
-                    Spacer()
-                    AsyncImage(url: URL(string: product.description)) { phase in
-                        switch phase {
-                        case .empty:
-                            ProgressView()
-                        case .success(let image):
-                            image.resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .clipShape(Circle())
-                                .shadow(radius: 2)
-                                .frame(width: 90, height: 90, alignment: .center)
-                        case .failure:
-                            Color.gray
-                                .clipShape(Circle())
-                                .shadow(radius: 2)
-                                .frame(width: 90, height: 90, alignment: .center)
-                        @unknown default:
-                            EmptyView()
-                        }
-                    }
+
+        ScrollView {
+//            Button {
+//                viewmodelProduct.getAllProducts()
+//                print("idk" , products.count)
+//
+//            } label: {
+//                Text("\(products.count)")
+//
+//
+//           }
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 15)],spacing: 15){
+//                products.count
+                ForEach(products, id: \.id) { product in
+                    NavigationLink(destination: ProductDetailCard(product: product)) {
+                        ProductCard_(product: product)
+                        
+                    }.padding(.top) .padding(.bottom)
                 }
-            }.onAppear {
+//                ForEach(0..<10, id: \.self ) { product in
+                
+//                    ProductCard_(product: product)
+//                Button(action: {selectedIndex = i}) {
+//                    CategoryView_(isActive: selectedIndex == i, text: categories_[i])
+//                    if(selectedIndex == 2){ FavoritesView()}
+//                }
+            
+            
+            }.padding(.horizontal)
+            VStack {
+//                Text([products])
+//                Text(products[0].name)
             }
-//            .onDisappear {
-//                viewModel.stopListening()
-//            }
-            .navigationTitle("Products")
+             
+        }
+    
+    }
+    struct ProductList_Previews: PreviewProvider {
+        static var previews: some View {
+            ScrollView {
+                
+                ProductList()
+            }
+        }
+    }
+    struct CategoryView_: View {
+        let isActive: Bool
+        let text: String
+        var body: some View {
+            VStack (alignment: .leading, spacing: 0) {
+                Text(text)
+                    .font(.system(size: 18))
+                    .fontWeight(.medium)
+                    .foregroundColor(isActive ? Color(.brown) : Color.black.opacity(0.5))
+                if (isActive) { Color(.brown)
+                        .frame(width: 15, height: 2)
+                        .clipShape(Capsule())
+                }
+            }
+            .padding(.trailing)
         }
     }
 }

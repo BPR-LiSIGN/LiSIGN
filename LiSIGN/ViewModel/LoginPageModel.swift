@@ -51,6 +51,12 @@ class LoginPageModel: ObservableObject {
     func ForgotPassword(){
         // Do Action here...
     }
+    func signout(){
+        try? Auth.auth().signOut()
+        LoginPage()
+    
+    }
+    
     @objc  func addUser() {
         let uid = Auth.auth().currentUser?.uid
         let _email = Auth.auth().currentUser?.email
@@ -70,7 +76,7 @@ class LoginPageModel: ObservableObject {
 
 
 //        database.child("user").child(uid!).setValue(object)
-        print("-------user id is: " + uid!)
+//        print("-------user id is: " + uid!)
     }
    
                                                   

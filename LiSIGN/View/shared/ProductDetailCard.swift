@@ -80,6 +80,7 @@ struct ProductDetailCard: View {
                         Text("Info")
                             .font(.headline)
                         Text(product.info)
+                        
                     }
                  
                 }

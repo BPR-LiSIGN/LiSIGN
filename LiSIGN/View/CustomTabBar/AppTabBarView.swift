@@ -8,6 +8,8 @@ struct AppTabBarView: View {
     
     @State private var selection: String = "home"
     @State private var tabSelection: TabBarItem = .Rooms
+    @State private var showSidebar = false
+
     
     // instances of each tab-view
     var roomsView = RoomsView()
@@ -15,19 +17,52 @@ struct AppTabBarView: View {
     var productsView = ProductsView()
     
     var body: some View {
-        CustomTabBarContainerView(selection: $tabSelection) {
-            // Color.blue
-            roomsView
-                .tabBarItem(tab: .Rooms, selection: $tabSelection)
+        ZStack(alignment: .topLeading) {
+            CustomTabBarContainerView(selection: $tabSelection) {
+                // Color.blue
+                roomsView
+                    .tabBarItem(tab: .Rooms, selection: $tabSelection)
+                
+                // as an alternative to the eurosign icon, "magnifyingglass"
+                // Color.red
+                marketPlaceView
+                    .tabBarItem(tab: .Marketplace, selection: $tabSelection)
+                
+                productsView
+                    .tabBarItem(tab: .Objects, selection: $tabSelection)
+                
+            }.navigationBarHidden(showSidebar)
             
-            // as an alternative to the eurosign icon, "magnifyingglass"
-            // Color.red
-            marketPlaceView
-                .tabBarItem(tab: .Marketplace, selection: $tabSelection)
+            if showSidebar {
+                ZStack{
+                    Color(.black).opacity(showSidebar ? 0.25 : 0.0)
+                }.onTapGesture {
+                    withAnimation (.easeInOut) {
+                        showSidebar = false
+                    }
+                }
+                .ignoresSafeArea()
+                
+            }
             
-            productsView
-                .tabBarItem(tab: .Objects, selection: $tabSelection)
-            
+            SidebarView()
+                .frame(width:250)
+                .offset(x:showSidebar ? 0 :-300, y:0)
+                .background(showSidebar ? Color.white : Color.clear )
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarLeading)
+            {Button{
+                withAnimation(.easeInOut){
+                    showSidebar.toggle()
+                }
+            }
+            label: {
+//                Circle()
+                Image(systemName: "person.fill")
+                    
+                    .frame(width: 32, height: 32)
+            }
+            }
         }
     }
 }

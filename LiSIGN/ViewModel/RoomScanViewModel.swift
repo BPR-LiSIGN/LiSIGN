@@ -101,7 +101,10 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
     /// Exporting the LIDAR scan as OBJ file
     /// - Author: Stefan Pfeifer
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        
+        /**
+                 At the start of the save method, we need to get the current ARFrame, which gives access to all ARAnchors currently placed in the scene.
+                 Of those, we only need anchors with meshed of the scene reconstruction in them. So we filter them to get only the ones which also are ARMeshAnchor objects.
+        */
         guard let frame = arView.session.currentFrame else {
             fatalError("Couldn't get the current ARFrame")
         }
@@ -121,7 +124,14 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
         
         // Convert the geometry of each ARMeshAnchor into a MDLMesh and add it to the MDLAsset
         for meshAncor in meshAnchors {
-            
+            /**
+             We need to assemble a MDLAsset object (using Model I/O), which in the end will contain the complete scene and can be exported to a file.
+             To create one we need to initialise it with an instance of an MDLMeshBufferAllocator implementation to throw memory around.
+             As such, we choose MTKMeshBufferAllocator, because RealityKit uses Metal as a Renderer. That in turn needs to be initialised with a MTLDevice instance, which is basically a reference to the graphics processor of the device
+            */
+            /**
+             All of the next steps, have to be done for every ARMeshAnchor we gathered earlier. We will need to convert the position of every vertex in its meash from local space to world space and write the result back into it's position in the vertex buffer.
+            */
             // Some short handles, otherwise stuff will get pretty long in a few lines
             let geometry = meshAncor.geometry
             let vertices = geometry.vertices
@@ -147,7 +157,15 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
                 verticesPointer.storeBytes(of: vertexWorldPosition.x, toByteOffset: vertexOffset, as: Float.self)
                 verticesPointer.storeBytes(of: vertexWorldPosition.y, toByteOffset: vertexOffset + componentStride, as: Float.self)
                 verticesPointer.storeBytes(of: vertexWorldPosition.z, toByteOffset: vertexOffset + (2 * componentStride), as: Float.self)
+                /**
+                 That is because the position of the vertices is stored relatively to the transform of its anchor and OBJ files have no concept of a scene hierarchy. The export method of the MDLAsset doesn't convert it for us, so we have to do it manually. Otherwise every mesh anchors vertex positions would start from the world origin after the export and we would end up with something like this https://miro.medium.com/max/4800/1*Q30YDCy7LjTiJn5kEx7kZw.png
+                 */
+
             }
+            
+            /**
+             Now everything is prepared to actually convert our scene geometry into a format which can be exported. We start by using the mesh buffer allocator to create MDLMeshBuffer out of the vertex and index MTLBuffers which can then be used to feed the mesh creation process. Next we initialise a MDLSubMesh with the index buffer and describe the type of faces we have, in our case triangles. So the sub mesh knows, every 3 indices in the index buffer describe one face. We also need to create MDLVertexDescriptor which we feed information about the memory layout of the vertex buffer. With all of that in place, we finally can build the Model I/O representation of our mesh, a MDLMesh. We add it to the MDLAsset and repeat the whole process for the other ARMeshAnchors.
+             */
             
             // Initializing MDLMeshBuffers with the content of the vertex and face MTLBuffers
             let byteCountVertices = vertices.count * vertices.stride
@@ -171,12 +189,17 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
             asset.add(mesh)
         }
         
+        /**
+         Finally, when the MDLAsset is fed with all meshes of the scene geometry, we can export it to an OBJ file and share it via UIActivityViewController(probably the controller is going to be changed)
+         */
+        
         // Setting the path to export the OBJ file to
         let documentsPath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let urlOBJ = documentsPath.appendingPathComponent("scan.obj")
 
         // Exporting the OBJ file
         if MDLAsset.canExportFileExtension("obj") {
+            print("------number of mesh ancors: \(meshAnchors.count)")
             do {
                 try asset.export(to: urlOBJ)
                 
@@ -190,7 +213,7 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
         } else {
             fatalError("Can't export OBJ")
         }
-    }
+    } // End of saveButtonPressed function
     /// ***********************************************************************************************
 
     
@@ -213,6 +236,6 @@ class RoomScanViewModel: UIViewController, ARSessionDelegate {
             alertController.addAction(restartAction)
             self.present(alertController, animated: true, completion: nil)
         }
-    }
+    } // End of session function
     
 }

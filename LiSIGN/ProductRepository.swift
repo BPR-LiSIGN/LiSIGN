@@ -11,6 +11,8 @@ import FirebaseCore
 import FirebaseDatabase
 
 class ProductRepository: ObservableObject {
+    @Published var products : [Product] = ProductDAO.shared.products
+    
     static let shared = ProductRepository()
     
     private init(){}
@@ -25,6 +27,8 @@ class ProductRepository: ObservableObject {
     
     func getAllProducts() {
         ProductDAO.shared.getAllPRoductsFromDB()
+        print("this is in repo: " , ProductDAO.shared.products.count)
+        print("this is in repo: products " , products.count)
     }
     
     func removeProductFromDB(id: String, name: String){
