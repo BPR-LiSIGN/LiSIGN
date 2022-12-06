@@ -38,8 +38,9 @@ struct RoomsView: View {
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
-                        ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
-
+                        NavigationLink(destination: RoomDetailed()) {
+                            ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
+                        }
                     }
                 }
                 .listStyle(GroupedListStyle())
