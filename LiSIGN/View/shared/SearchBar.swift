@@ -32,7 +32,7 @@ struct SearchBar: View {
                     }
                 }
             }
-            .foregroundColor(Color("Brown"))
+            .foregroundColor(Color(.brown))
             .padding(.leading, 13)
         }
         .frame(height: 40)

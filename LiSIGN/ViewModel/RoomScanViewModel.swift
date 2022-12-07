@@ -1,7 +1,9 @@
-//
-//  RoomScanViewModel.swift
-//  LiSIGN
-//
+/*
+See LICENSE folder for this sample’s licensing information.
+
+Abstract:
+Main view controller for the AR experience.
+*/
 
 import Foundation
 import RealityKit
