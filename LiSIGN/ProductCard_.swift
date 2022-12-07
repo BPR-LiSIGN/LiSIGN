@@ -18,16 +18,17 @@ struct ProductCard_: View {
             } label: {
                 Image(systemName: "heart.fill")
                     .foregroundColor(.red.opacity(0.9))
-                    .padding()
+                    .padding(.top)
             }
             // AsyncImage(url: URL(string: product.image)) { image in cimage
-            Image(systemName: "lamp.desk")
+            Image("\(product._name)")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 40, height: 40, alignment: .center)
-                .foregroundColor(.white.opacity(0.7))
+                .frame(width: 100, height: 90, alignment: .center)
+                .foregroundColor(.purple.opacity(0.7))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .overlay(alignment: .bottom) {
+                .overlay(alignment: .bottom)
+            {
                     HStack {
                         Text(product._name)
                             .font(.headline)

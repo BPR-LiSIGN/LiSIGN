@@ -32,6 +32,17 @@ class ProductDAO {
             }
         })
     }
+   func addProductToDBList(id: String, name: String, description: String, info: String, datePublished: String)
+    {
+        database.child("productsList").child("productsId").child(id).child("name").setValue(name, withCompletionBlock: { err, ref in
+            if let error = err {
+                print("scanned object was not saved: \(error.localizedDescription)")
+            } else {
+                print("scanned object saved successfully!!")
+            }
+        })
+    }
+    
     
     // READ
     func getProductFromDB(id: String) {

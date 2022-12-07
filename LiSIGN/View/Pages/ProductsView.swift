@@ -23,7 +23,6 @@ struct ProductsView: View {
     init() {
         
     }
-    var cardDetailed = [CardDetailed()];
     private let categories2 = ["Your products", "Favorites"]
     //    func observePosts() {
     //        let postsRef = Database.database().reference().child("Product")
@@ -246,7 +245,20 @@ struct ProductsView: View {
             //            }
             //            }
             //        }
-        }
+        }.toolbar {
+            ToolbarItem(placement: .navigationBarTrailing)
+            {
+                NavigationLink(
+                    destination:AddProductView(),
+                    label: {
+                        Image(systemName: "plus")
+                            .frame(width: 32, height: 32)
+                    })
+                AddProductView()
+                }
+            }
+          
+        
         .onAppear{ self.productsViewModel.getAllProducts()}
         .background(Color.white)
         
@@ -254,7 +266,7 @@ struct ProductsView: View {
     }}
 struct ProductsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductsView()
+        ProductsView().environmentObject(ProductsViewModel())
     }
 }
 

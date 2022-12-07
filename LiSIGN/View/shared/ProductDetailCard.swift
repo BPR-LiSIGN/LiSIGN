@@ -8,6 +8,8 @@
 import SwiftUI
 import Firebase
 import FirebaseDatabase
+import SceneKit
+
 
 
 struct ProductDetailCard: View {
@@ -45,7 +47,7 @@ struct ProductDetailCard: View {
     
     var body: some View {
         ScrollView{
-          
+     
         placeholder: do {
                 Image(systemName: "lamp.desk")
                 .resizable()
@@ -59,13 +61,13 @@ struct ProductDetailCard: View {
             
             VStack(spacing:30)
             {
-                Button {
-                    vm.getProduct(id: "1")
-                }
-            label: {
-                Label("update", systemImage: "checkmark")
-                    .labelStyle(.iconOnly)
-            }
+                VStack{
+
+                    SceneView(scene: SCNScene(named: "\(product.name).usdz"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
+                        
+//                    (named: "\(product.name).usdz")
+            }.frame(width: 400, height: 400)
+                    
                 Text(product.name)
                     .font(.largeTitle)
                     .bold()
@@ -85,6 +87,7 @@ struct ProductDetailCard: View {
                  
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding()
             }
             .padding(.horizontal)
         }

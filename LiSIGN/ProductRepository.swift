@@ -20,6 +20,10 @@ class ProductRepository: ObservableObject {
     func addProduct(id: String, name: String, description: String, info: String, datePublished: String) {
         ProductDAO.shared.addProductToDB(id: id, name: name, description: description, info: info, datePublished: datePublished)
     }
+    func addProductToList(id: String, name: String, description: String, info: String, datePublished: String) {
+        ProductDAO.shared.addProductToDBList(id: id, name: name, description: description, info: info, datePublished: datePublished)
+
+    }
     
     func getProduct(id: String) { // Not sure if I need the userID or create a roomId
         ProductDAO.shared.getProductFromDB(id: id)

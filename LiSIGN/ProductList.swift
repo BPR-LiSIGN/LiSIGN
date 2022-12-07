@@ -56,11 +56,6 @@ struct ProductList: View {
             
             
             }.padding(.horizontal)
-            VStack {
-//                Text([products])
-//                Text(products[0].name)
-            }
-             
         }
     
     }

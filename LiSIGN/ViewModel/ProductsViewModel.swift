@@ -19,16 +19,55 @@ class ProductsViewModel: ObservableObject {
     let database = Database.database().reference()
 //    @Published var products: [Product] = []
     @Published var products = [Product]()
+    @Published var productsList = [Product]()
+
 
     func getProduct(id: String)
     {
         ProductRepository.shared.getProduct(id: id)
     }
+   func getAllProductsFromList()->[Product]
+    {
+        let allProducts = database.child("productsList")
+            .child("productsId")
+            .observe(.value,
+                     with:
+                        { [self]
+                (
+                    snapshot
+                )
+                in
+        
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                   let dict = childSnapshot.value as? [String:Any],
+                   let name = dict["name"] as? String,
+                   let description = dict["description"] as? String,
+                   let info = dict["info"] as? String
+                    {
+                    var p = Product(name: name, description: description, info: info)
+                    self.productsList.append(p)
+                
+                    self.productsList = productsList
+                }
+                Swift.print("-------from list  ", [productsList])
+
+                }
+
+
+            })
+        
+        print("below the stuff : ", [productsList] )
+//        ProductRepository.shared.getAllProducts()
+//        print("--this is in viewmodel: ", ProductDAO.shared.products.count)
+        return productsList
+
+        }
     
     func getAllProducts() -> [Product]
     {
         let allProducts = database.child("user")
-            .child("qdmvwiGBElSnXrmSAgX8ezMRsQ93")
+            .child(userId!)
             .child("scannedObjects")
             .child("productsId")
             .observe(.value,
@@ -48,7 +87,7 @@ class ProductsViewModel: ObservableObject {
                     {
                     var p = Product(name: name, description: description, info: info)
                     self.products.append(p)
-
+                    print("---user id " + userId!)
                     Swift.print("-------name in dao: " + p.name )
                     Swift.print("-------name in dao: ", products[0].name )
                     Swift.print("-----first ", [products] )

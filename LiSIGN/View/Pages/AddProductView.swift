@@ -41,16 +41,7 @@ struct AddProductView: View {
                 }
             }
             .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading){
-                    Button {
-                        dismiss()
-                    }
-                label: {
-                    Label("Cancel", systemImage: "xmark")
-                        .labelStyle(.iconOnly)
-                    
-                }
-                }
+               
                 ToolbarItem{
                     NavigationLink(isActive: $navigateToProduct)
                     {
@@ -101,6 +92,7 @@ extension AddProductView {
 
         ProductRepository.shared.addProduct(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
         print("----------id and name:  ", product.id, product.name, product.description, product.info, product.datePublished)
+        ProductRepository.shared.addProductToList(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
     }
 }
 
