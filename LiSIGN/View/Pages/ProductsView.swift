@@ -84,10 +84,6 @@ struct ProductsView: View {
             NavigationView {
                 
                 ScrollView{
-//                    Button{productsViewModel.getAllProducts()} label: {
-//                        Text("\(ProductsViewModel().products.count)")
-//                        
-//                    }
                     ProductList(products: productsViewModel.products)
                     
                 }.navigationViewStyle(.stack)
