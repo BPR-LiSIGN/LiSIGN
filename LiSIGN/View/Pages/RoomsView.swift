@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SceneKit
 
 struct RoomsView: View {
     
@@ -33,6 +34,14 @@ struct RoomsView: View {
                         storyboardview()
                     }.padding()
                 }
+                
+                
+//                displaying 3d model
+//                VStack{
+//                    Text("HEllo")
+//
+//                    SceneView(scene: SCNScene(named: "scaned-my room-full.obj"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
+//                }.frame(width: 400, height: 400)
             
                 List{
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in

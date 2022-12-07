@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct ProductCard_: View {
-    var product: Product
+    //    var product: Product
+    let product: Product
     
     var body: some View {
         VStack {
@@ -17,18 +18,19 @@ struct ProductCard_: View {
             } label: {
                 Image(systemName: "heart.fill")
                     .foregroundColor(.red.opacity(0.9))
-                    .padding()
+                    .padding(.top)
             }
             // AsyncImage(url: URL(string: product.image)) { image in cimage
-            Image(systemName: "lamp.desk")
+            Image("\(product._name)")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 40, height: 40, alignment: .center)
-                .foregroundColor(.white.opacity(0.7))
+                .frame(width: 100, height: 90, alignment: .center)
+                .foregroundColor(.purple.opacity(0.7))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .overlay(alignment: .bottom) {
+                .overlay(alignment: .bottom)
+            {
                     HStack {
-                        Text(product.name)
+                        Text(product._name)
                             .font(.headline)
                             .foregroundColor(.gray)
                             .shadow(color:.white, radius:3, x:0, y:0)
@@ -53,6 +55,6 @@ struct ProductCard_: View {
 
  struct ProductCard__Previews: PreviewProvider {
     static var previews: some View {
-        ProductCard_(product: Product.all[0])
+        ProductCard_(product: Product(name: "name", description: "descri", info: "info"))
     }
  }

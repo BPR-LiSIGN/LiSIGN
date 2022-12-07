@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
 struct AddProductView: View {
     @State private var name: String = ""
@@ -14,6 +17,7 @@ struct AddProductView: View {
     @State private var navigateToProduct =  false
     @EnvironmentObject var productsViewModel: ProductsViewModel
 //    var viewModel = ReadProductsViewModel()
+    
 
     @Environment(\.dismiss) var dismiss
     
@@ -37,20 +41,12 @@ struct AddProductView: View {
                 }
             }
             .toolbar(content: {
-                ToolbarItem(placement: .navigationBarLeading){
-                    Button {
-                        dismiss()
-                    }
-                label: {
-                    Label("Cancel", systemImage: "xmark")
-                        .labelStyle(.iconOnly)
-                    
-                }
-                }
+               
                 ToolbarItem{
                     NavigationLink(isActive: $navigateToProduct)
                     {
-                        ProductDetailCard(product: productsViewModel.products.sorted {$0.datePublished > $1.datePublished}[0])
+                        var product = Product(name: name, description: description, info: info)
+                        ProductDetailCard(product: product)
                             .navigationBarBackButtonHidden(true)
                     }
                 label: {
@@ -90,8 +86,13 @@ extension AddProductView {
         
         let datePublished = dateFormat.string(from: now)
         print(datePublished)
-        let product = Product(name: name, image: "", description: description, info: info, datePublished: datePublished)
-        productsViewModel.addProduct(product: product)
+//        let product = Product(name: name,  description: description, info: info)
+        let product = Product( name: name,  description: description, info: info)
+        print("---------- name:  ",  name, description, info)
+
+        ProductRepository.shared.addProduct(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
+        print("----------id and name:  ", product.id, product.name, product.description, product.info, product.datePublished)
+        ProductRepository.shared.addProductToList(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
     }
 }
 
