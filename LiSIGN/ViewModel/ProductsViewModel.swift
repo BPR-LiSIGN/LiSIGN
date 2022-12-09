@@ -67,7 +67,7 @@ class ProductsViewModel: ObservableObject {
     func getAllProducts() -> [Product]
     {
         let allProducts = database.child("user")
-            .child(userId!)
+            //.child(userId!)
             .child("scannedObjects")
             .child("productsId")
             .observe(.value,

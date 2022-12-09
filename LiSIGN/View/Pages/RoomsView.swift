@@ -30,8 +30,8 @@ struct RoomsView: View {
 //                            ProductCard(image: "chair", title: "h", type: "j", price: 2)
 //                        }
 //                    )
-                    NavigationLink("Scan Room") {
-                        storyboardview()
+                    NavigationLink("Add Room") {
+                        AddRoomView()
                     }.padding()
                 }
                 
@@ -47,8 +47,9 @@ struct RoomsView: View {
                     ForEach(myFruits.filter({ (fruit: String) -> Bool in
                         return fruit.hasPrefix(searchText) || searchText == ""
                     }), id: \.self) { fruit in
-                        ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
-
+                        NavigationLink(destination: RoomDetailed()) {
+                            ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
+                        }
                     }
                 }
                 .listStyle(GroupedListStyle())
@@ -79,20 +80,6 @@ struct RoomsView: View {
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
         RoomsView()
-    }
-}
-
-// For displaying the Storyboard for scanning rooms
-struct storyboardview: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let storyboard = UIStoryboard(name: "ScanRoomView", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(identifier: "ScanRoomView")
-        
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        // This remains empty
     }
 }
 
