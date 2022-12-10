@@ -51,6 +51,8 @@
 		2F9FD7DC294362D7005E1576 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */; };
 		2F9FD7DE29436323005E1576 /* RoomDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DD29436323005E1576 /* RoomDetailed.swift */; };
 		2F9FD7E0294365C1005E1576 /* AddRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DF294365C1005E1576 /* AddRoomView.swift */; };
+		2F9FD7E32943FBC9005E1576 /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */; };
+		2F9FD7E52943FBF0005E1576 /* RoomDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */; };
 		2FA57FDD29151E3D00D8D4AF /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA57FDC29151E3D00D8D4AF /* FocusEntity */; };
 		2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */; };
 		2FB8A661291E68130044D2A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A660291E68130044D2A5 /* Extensions.swift */; };
@@ -161,6 +163,8 @@
 		2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../bpr_stuff/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2F9FD7DD29436323005E1576 /* RoomDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailed.swift; sourceTree = "<group>"; };
 		2F9FD7DF294365C1005E1576 /* AddRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomView.swift; sourceTree = "<group>"; };
+		2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
+		2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDAO.swift; sourceTree = "<group>"; };
 		2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_CoachingOverlay.swift; sourceTree = "<group>"; };
 		2FB8A660291E68130044D2A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -339,6 +343,22 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		2F9FD7E12943FBB8005E1576 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2F9FD7E62943FF97005E1576 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
 		2FB8A662291E68A40044D2A5 /* ScanRoomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +372,6 @@
 			children = (
 				2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */,
 				A461663728E2F5C800F59461 /* LiSIGN */,
-				A461664828E2F5CA00F59461 /* LiSIGNTests */,
 				A461665228E2F5CA00F59461 /* LiSIGNUITests */,
 				A461663628E2F5C800F59461 /* Products */,
 			);
@@ -371,6 +390,8 @@
 		A461663728E2F5C800F59461 /* LiSIGN */ = {
 			isa = PBXGroup;
 			children = (
+				2F9FD7E62943FF97005E1576 /* Dao */,
+				2F9FD7E12943FBB8005E1576 /* Repository */,
 				A4B7C71E293DF997005E8394 /* Objects */,
 				A4DAF6AA292FE25600F811D2 /* ProductCard_.swift */,
 				A4DAF6A8292FD8A100F811D2 /* ProductList.swift */,
@@ -386,6 +407,7 @@
 				A47CEAA0293646E9002B47E8 /* ProductRepository.swift */,
 				A47CEAA22936481A002B47E8 /* ProductDAO.swift */,
 				A4ECA6D1293F67F400CCF20B /* Images.xcassets */,
+				A461664828E2F5CA00F59461 /* LiSIGNTests */,
 			);
 			path = LiSIGN;
 			sourceTree = "<group>";
@@ -678,10 +700,12 @@
 				A4F50377293B9B8300151872 /* ProductListView.swift in Sources */,
 				2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */,
 				2F6257C829094085002E9832 /* RoomScanViewModel.swift in Sources */,
+				2F9FD7E52943FBF0005E1576 /* RoomDAO.swift in Sources */,
 				A4F5037B293BD15900151872 /* FilterProductsListViewModel.swift in Sources */,
 				A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */,
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
 				2F37678628FB23DE000050FE /* ProductCard.swift in Sources */,
+				2F9FD7E32943FBC9005E1576 /* RoomRepository.swift in Sources */,
 				2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */,
 				A4DAF69C292D3D3A00F811D2 /* ProductsViewModel.swift in Sources */,
 				2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */,

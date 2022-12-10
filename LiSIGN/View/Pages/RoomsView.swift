@@ -13,7 +13,7 @@ struct RoomsView: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
 
     
-    // var roomScanViewModel = RoomScanViewModel()
+    var allRooms = RoomRepository.shared.getAllRooms()
     
     let myFruits = [
         "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
