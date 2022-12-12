@@ -45,7 +45,7 @@ struct AppTabBarView: View {
                 
             }
             
-            SidebarView()
+            SidebarView(viewModel: LoginPageModel())
                 .frame(width:250)
                 .offset(x:showSidebar ? 0 :-300, y:0)
                 .background(showSidebar ? Color.white : Color.clear )

@@ -20,31 +20,6 @@ struct ProductDetailCard: View {
     @State var _info : String = ""
     var vm = ProductsViewModel()
     
-//    func observeProducts(){
-//        let productsRef = Database.database().reference().child("Product")
-//
-//        productsRef.observe(.value, with: { [self] snapshot in
-//
-//            for child in snapshot.children {
-//                if let childSnapshot = child as? DataSnapshot,
-//                   let dict = childSnapshot.value as? [String:Any],
-//
-//                    var name = dict["name"] as? String,
-//                     var description = dict["description"] as? String,
-//                    var info = dict["info"] as? String
-//                     {
-//                     Swift.print("maybe: " + name )
-//                     self._name = name
-//                    self._description = description
-//                    self._info = info
-//                    Swift.print("_name is: " + _name + " description is: " + _description + " info is: " + _info)
-//                }
-//            }
-//        })
-//        print("Print _name: " + self._name)
-//        }
-    
-    
     var body: some View {
         ScrollView{
      
@@ -84,6 +59,9 @@ struct ProductDetailCard: View {
                         Text(product.info)
                         
                     }
+                    NavigationLink("Scan Object") {
+                        storyboardview()
+                        }
                  
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -99,5 +77,17 @@ struct ProductDetailCard_Previews: PreviewProvider{
     static var previews: some View {
         
         ProductDetailCard(product: Product(name: "test name", description: "test desc", info: "test info"))
+    }
+}
+struct storyboardview2: UIViewControllerRepresentable {
+    func makeUIViewController(context: Context) -> some UIViewController {
+        let storyboard = UIStoryboard(name: "ScanRoomView", bundle: Bundle.main)
+        let controller = storyboard.instantiateViewController(identifier: "ScanObjectView")
+
+        return controller
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // This remains empty
     }
 }

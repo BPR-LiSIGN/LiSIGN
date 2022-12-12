@@ -27,11 +27,9 @@ class Product: Identifiable, Codable {
         get { return self.name}
         set {self.name = newValue}
     }
-    
-    
-    
 }
 
+//mockups
 extension Product {
     static let all: [Product] = [
         Product (name: "lllllll", description: "This is just the demo 1", info: "some info 1"),

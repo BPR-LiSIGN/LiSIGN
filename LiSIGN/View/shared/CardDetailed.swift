@@ -59,7 +59,7 @@ extension View {
 
 struct DetailScreen_Previews: PreviewProvider {
     static var previews: some View {
-        CardDetailed(product: Product(name: "test name", description: "test desc", info: "test info"))
+        CardDetailed(product: Product(name: "test name", description: "test desc", info: "test info")).environmentObject(ProductsViewModel())
     }
 }
 
@@ -75,13 +75,17 @@ struct DescriptionView: View {
                     .font(.title)
                     .fontWeight(.bold)
                 Spacer()
-
+                
                 Text("$1299")
                     .font(.title)
                     .foregroundColor(.black)
                     .fontWeight(.medium)
-
                 
+                
+                Button{
+                    ProductRepository.shared.addProductToFavorites(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: "09")
+                }
+            label:{
                 Text("Add to Cart")
                     .font(.title3)
                     .fontWeight(.semibold)
@@ -90,8 +94,9 @@ struct DescriptionView: View {
                     .padding(.horizontal, 8)
                     .background(Color.white)
                     .cornerRadius(10.0)
-
                 
+                
+            }
             }
             //                Rating
          
