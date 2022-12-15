@@ -7,8 +7,8 @@ import Foundation
 import SwiftUI
 import ModelIO
 
-public class Room {
-    private var _id: UUID = UUID()    // Maybe we don't need an id at all
+public class Room: Identifiable {
+    private var _id: String
     private var _title: String = ""
     private var _image: String = ""
     private var _description: String = ""
@@ -21,8 +21,15 @@ public class Room {
 //        self._type = "Room"
 //    }
     public init(title: String, description: String) {
+        self._id = NSUUID().uuidString
         self._title = title
         self._description = description
+    }
+    
+    public var id: String {
+        get {
+            return self._id;
+        }
     }
     
     public var title: String {

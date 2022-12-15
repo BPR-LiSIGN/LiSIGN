@@ -9,7 +9,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 struct AddRoomView: View {
-    @State private var name: String = ""
+    @State private var title: String = ""
     @State private var description: String = ""
     @State private var info: String = ""
     @State private var navigateToRoom =  false
@@ -23,9 +23,9 @@ struct AddRoomView: View {
         
         NavigationView {
             Form {
-                Section(header: Text("Name"))
+                Section(header: Text("Title"))
                 {
-                    TextField("Room name", text: $name)
+                    TextField("Room title", text: $title)
                 }
                 
                 Section(header: Text("Description"))
@@ -48,7 +48,7 @@ struct AddRoomView: View {
                 label: {
                     
                     Button {
-                        // saveRoom()
+                        saveRoom()
                         
 //                        viewModel.observeProducts()
                         navigateToRoom = true
@@ -57,7 +57,7 @@ struct AddRoomView: View {
                     Label("Done", systemImage: "checkmark")
                         .labelStyle(.iconOnly)
                 }
-                .disabled(name.isEmpty)
+                .disabled(title.isEmpty)
                     
                 }}
             })
@@ -69,7 +69,7 @@ struct AddRoomView: View {
         }
     }
 
-extension AddProductView {
+extension AddRoomView {
     private func saveRoom() {
         let now = Date()
         let dateFormat = DateFormatter()
@@ -77,14 +77,12 @@ extension AddProductView {
         
         let datePublished = dateFormat.string(from: now)
         print(datePublished)
-//        let product = Product(name: name,  description: description, info: info)
-//        let product = Product( name: name,  description: description, info: info)
-        //let room = Room(title: $name, description: $description)
-//        print("---------- name:  ",  name, description, info)
-
+        
+        let room = Room(title: title, description: description)
 //        ProductRepository.shared.addProduct(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
 //        print("----------id and name:  ", product.id, product.name, product.description, product.info, product.datePublished)
 //        ProductRepository.shared.addProductToList(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
+        RoomRepository.shared.addRoom(_roomId: room.id, _roomObject: room)
     }
 }
 

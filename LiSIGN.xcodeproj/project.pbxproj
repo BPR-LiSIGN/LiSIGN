@@ -559,6 +559,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				2F9FD7E8294BBCA7005E1576 /* PBXTargetDependency */,
+				2F9FD7EA294BBCA7005E1576 /* PBXTargetDependency */,
 				A461664728E2F5CA00F59461 /* PBXTargetDependency */,
 			);
 			name = LiSIGNTests;
@@ -744,6 +746,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F9FD7E8294BBCA7005E1576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2F9FD7E7294BBCA7005E1576 /* FirebaseAuth */;
+		};
+		2F9FD7EA294BBCA7005E1576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2F9FD7E9294BBCA7005E1576 /* FirebaseDatabase */;
+		};
 		A461664728E2F5CA00F59461 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A461663428E2F5C800F59461 /* LiSIGN */;
@@ -1196,6 +1206,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		2F9FD7E7294BBCA7005E1576 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2F9FD7E9294BBCA7005E1576 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 		2FA57FDC29151E3D00D8D4AF /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;
