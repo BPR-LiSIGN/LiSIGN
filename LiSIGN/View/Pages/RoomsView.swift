@@ -40,7 +40,7 @@ struct RoomsView: View {
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 250), spacing: 15)],spacing: 15){
                         ForEach(mockRooms, id: \.id) { mockRoom in
                             NavigationLink(destination: RoomDetailed(room: mockRoom)) {
-                                ProductCard(image: "3d_scanned_room", title: mockRoom.title, type: "Room in my apartment", price: 100.000)
+                                ProductCard(image: "3d_scanned_room", title: mockRoom.title, type: "Room in my apartment")
                             }.padding(.top) .padding(.bottom)
                         }
 
