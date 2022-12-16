@@ -4,6 +4,13 @@
 //  LiSIGN
 //
 
+/**
+# REFERENCE
+ The Swift Class is taken from the sample code from the official documentation of Apple (https://developer.apple.com/documentation/arkit/content_anchors/visualizing_and_interacting_with_a_reconstructed_scene)
+
+ The proper reference is done in the Sources of information inside the Project Report.
+ */
+
 import Foundation
 import RealityKit
 import ARKit
@@ -99,6 +106,13 @@ class ObjectScanViewModel: UIViewController, ARSessionDelegate {
     /// ***********************************************************************************************
     /// Exporting the LIDAR scan as OBJ file
     /// - Author: Stefan Pfeifer
+    /*  # REFERENCE
+        The Swift Class is taken from the sample code from the Medium post (https://medium.com/zeitraumgruppe/what-arkit-3-5-and-the-new-ipad-pro-bring-to-the-table-d4bf25e5dd87)
+     which is based on the official sample code from Apple ((https://developer.apple.com/documentation/arkit/content_anchors/visualizing_and_interacting_with_a_reconstructed_scene)
+)
+        The proper reference is done in the Sources of information inside the Project Report.
+     */
+    
     @IBAction func saveButtonPressed(_ sender: UIButton) {
         /**
                  At the start of the save method, we need to get the current ARFrame, which gives access to all ARAnchors currently placed in the scene.
