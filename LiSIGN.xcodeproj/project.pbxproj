@@ -97,7 +97,6 @@
 		A47FC225292D3AEE008B17EC /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = A47FC224292D3AEE008B17EC /* Product.swift */; };
 		A485541C2943B82B00FDCD40 /* ScanObjectView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A485541B2943B82B00FDCD40 /* ScanObjectView.storyboard */; };
 		A48554202943B9BB00FDCD40 /* ObjectScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A485541F2943B9BB00FDCD40 /* ObjectScanViewModel.swift */; };
-		A4B7C717293D18A3005E8394 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A4B7C716293D18A2005E8394 /* GoogleService-Info.plist */; };
 		A4B7C724293E1EFD005E8394 /* sneaker_pegasustrail.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A4B7C71F293E1EF9005E8394 /* sneaker_pegasustrail.usdz */; };
 		A4B7C725293E1EFD005E8394 /* fender_stratocaster.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A4B7C720293E1EF9005E8394 /* fender_stratocaster.usdz */; };
 		A4B7C726293E1EFD005E8394 /* solar_panels_stylized.usdz in Resources */ = {isa = PBXBuildFile; fileRef = A4B7C721293E1EFC005E8394 /* solar_panels_stylized.usdz */; };
@@ -184,7 +183,6 @@
 		A47FC224292D3AEE008B17EC /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		A485541B2943B82B00FDCD40 /* ScanObjectView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ScanObjectView.storyboard; sourceTree = "<group>"; };
 		A485541F2943B9BB00FDCD40 /* ObjectScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectScanViewModel.swift; sourceTree = "<group>"; };
-		A4B7C716293D18A2005E8394 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A4B7C71F293E1EF9005E8394 /* sneaker_pegasustrail.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = sneaker_pegasustrail.usdz; sourceTree = "<group>"; };
 		A4B7C720293E1EF9005E8394 /* fender_stratocaster.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = fender_stratocaster.usdz; sourceTree = "<group>"; };
 		A4B7C721293E1EFC005E8394 /* solar_panels_stylized.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; path = solar_panels_stylized.usdz; sourceTree = "<group>"; };
@@ -345,22 +343,6 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
-		2F9FD7E12943FBB8005E1576 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		2F9FD7E62943FF97005E1576 /* Dao */ = {
-			isa = PBXGroup;
-			children = (
-				2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */,
-			);
-			path = Dao;
-			sourceTree = "<group>";
-		};
 		2FB8A662291E68A40044D2A5 /* ScanRoomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,8 +375,6 @@
 		A461663728E2F5C800F59461 /* LiSIGN */ = {
 			isa = PBXGroup;
 			children = (
-				2F9FD7E62943FF97005E1576 /* Dao */,
-				2F9FD7E12943FBB8005E1576 /* Repository */,
 				A48554212947530D00FDCD40 /* Entities */,
 				A4B7C71E293DF997005E8394 /* Objects */,
 				A4F171A528E306D4006BE5B1 /* Fonts */,
@@ -450,6 +430,7 @@
 		A48554222947532400FDCD40 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */,
 				A47CEAA22936481A002B47E8 /* ProductDAO.swift */,
 			);
 			path = DAO;
@@ -458,6 +439,7 @@
 		A48554232947532C00FDCD40 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */,
 				A47CEAA0293646E9002B47E8 /* ProductRepository.swift */,
 			);
 			path = Repository;
