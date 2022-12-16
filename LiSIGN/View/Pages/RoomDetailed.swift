@@ -12,7 +12,7 @@ struct RoomDetailed: View {
     
     var body: some View {
         VStack{
-            SceneView(scene: SCNScene(named: "fender_stratocaster.usdz"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
+            SceneView(scene: SCNScene(named: "scaned-my room-full.obj"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
             
             Spacer()
             
