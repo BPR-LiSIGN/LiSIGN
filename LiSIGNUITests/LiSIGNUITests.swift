@@ -6,6 +6,8 @@
 //
 
 import XCTest
+//import FirebaseCore
+//import FirebaseDatabase
 
 class LiSIGNUITests: XCTestCase {
 
@@ -33,9 +35,36 @@ class LiSIGNUITests: XCTestCase {
     func testLaunchPerformance() throws {
         if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
             // This measures how long it takes to launch your application.
+            print("HEREEEEEEEEEE")
             measure(metrics: [XCTApplicationLaunchMetric()]) {
                 XCUIApplication().launch()
             }
         }
     }
+    
+//    func testRetrievingDataFromFirebase() {
+//        let firebaseRef = Database.database().reference()
+//        let expectation = self.expectation(description: "Data should be retrieved from Firebase")
+//
+//        firebaseRef.child("productsList").observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            XCTAssertNotNil(value, "Data should not be nil")
+//            expectation.fulfill()
+//        })
+//
+//        waitForExpectations(timeout: 5, handler: nil)
+//    }
+//
+//    func testAddingDataToFirebase() {
+//        let firebaseRef = Database.database().reference()
+//        let expectation = self.expectation(description: "Data should be added to Firebase")
+//
+//        let testData = ["name": "John Doe", "age": 32]
+//        firebaseRef.child("test_data").setValue(testData) { (error, ref) in
+//            XCTAssertNil(error, "Error should be nil")
+//            expectation.fulfill()
+//        }
+//
+//        waitForExpectations(timeout: 5, handler: nil)
+//    }
 }

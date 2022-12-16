@@ -13,65 +13,47 @@ struct RoomsView: View {
     @StateObject var loginData: LoginPageModel = LoginPageModel()
 
     
-    // var roomScanViewModel = RoomScanViewModel()
+    var allRooms: [Room] = RoomRepository.shared.getAllRooms()
     
-    let myFruits = [
-        "Apple 🍏", "Banana 🍌", "Blueberry 🫐", "Strawberry 🍓", "Avocado 🥑", "Cherries 🍒", "Mango 🥭", "Watermelon 🍉", "Grapes 🍇", "Lemon 🍋"
+    var mockRooms: [Room] = [
+        Room(title: "Bedroom", description: "This is my bedroom. It has enough space for a king size bed. Besides that it also has a lot of storage space and wardrobes."),
+        Room(title: "Kitchen", description: "Big kitchen. It's just a regular danish kitchen. The layout is open, like an american house, and there is space for having breakfast all together here."),
+        Room(title: "Living room", description: "shared living room with my danish roomie. Nice space for being a big group. You can play board games, and there's even a pool table!"),
+        Room(title: "Bathroom", description: "Where the magic happens. All the battles took place here. Some losses, but overall, the team gave its all"),
+        Room(title: "Master bedroom", description: "This is the biggest bedroom of the house. It has a nice balcony with a view to the pool outside."),
+        Room(title: "Garage", description: "It fits 2 regular cars, and some more space for random things that you don't know where to store. like biclycles and stuff like that.")
     ]
+    let columns = [
+           GridItem(.flexible())
+       ]
     
     var body: some View {
         NavigationView {
             VStack(alignment: .leading){
                 HStack {
                     SearchBar(searchText: $searchText, searching: $searching)
-//                    NavigationLink (
-//                        destination: storyboardview(),
-//                        label: {
-//                            ProductCard(image: "chair", title: "h", type: "j", price: 2)
-//                        }
-//                    )
-                    NavigationLink("Scan Room") {
-                        storyboardview()
+                    NavigationLink("Add Room") {
+                        AddRoomView()
                     }.padding()
                 }
-                
-                
-//                displaying 3d model
-//                VStack{
-//                    Text("HEllo")
-//
-//                    SceneView(scene: SCNScene(named: "scaned-my room-full.obj"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
-//                }.frame(width: 400, height: 400)
-            
-                List{
-                    ForEach(myFruits.filter({ (fruit: String) -> Bool in
-                        return fruit.hasPrefix(searchText) || searchText == ""
-                    }), id: \.self) { fruit in
-                        ProductCard(image: "3d_sofa", title: fruit, type: "room", price: 11.99)
-
-                    }
-                }
-                .listStyle(GroupedListStyle())
-                .toolbar{
-                    if searching{
-                        Button("Cancel") {
-                            searchText = ""
-                            withAnimation{
-                                searching = false
-                                UIApplication.shared.dismissKeyboard()
-                            }
+                ScrollView {
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 250), spacing: 15)],spacing: 15){
+                        ForEach(mockRooms, id: \.id) { mockRoom in
+                            NavigationLink(destination: RoomDetailed(room: mockRoom)) {
+                                ProductCard(image: "3d_scanned_room", title: mockRoom.title, type: "Room in my apartment")
+                            }.padding(.top) .padding(.bottom)
                         }
-                    }
+
+                    }.padding(.horizontal)
                 }
-                .gesture(DragGesture()
-                    .onChanged({ _ in
-                        UIApplication.shared.dismissKeyboard()
-                    }))
+            
             }
             
             .navigationTitle(searching ? "Searching": "Rooms")
             
             
+        }.onAppear{
+            ProductRepository.shared.getAllProducts()
         }
     }
 }
@@ -79,20 +61,6 @@ struct RoomsView: View {
 struct RoomsView_Previews: PreviewProvider {
     static var previews: some View {
         RoomsView()
-    }
-}
-
-// For displaying the Storyboard for scanning rooms
-struct storyboardview: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> some UIViewController {
-        let storyboard = UIStoryboard(name: "ScanRoomView", bundle: Bundle.main)
-        let controller = storyboard.instantiateViewController(identifier: "ScanRoomView")
-        
-        return controller
-    }
-    
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        // This remains empty
     }
 }
 

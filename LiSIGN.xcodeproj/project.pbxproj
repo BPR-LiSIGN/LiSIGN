@@ -47,6 +47,11 @@
 		2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */; };
 		2F76CBF428EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */; };
 		2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9B007F29200D5B00208E67 /* RoomModel.swift */; };
+		2F9FD7DC294362D7005E1576 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */; };
+		2F9FD7DE29436323005E1576 /* RoomDetailed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DD29436323005E1576 /* RoomDetailed.swift */; };
+		2F9FD7E0294365C1005E1576 /* AddRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7DF294365C1005E1576 /* AddRoomView.swift */; };
+		2F9FD7E32943FBC9005E1576 /* RoomRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */; };
+		2F9FD7E52943FBF0005E1576 /* RoomDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */; };
 		2FA57FDD29151E3D00D8D4AF /* FocusEntity in Frameworks */ = {isa = PBXBuildFile; productRef = 2FA57FDC29151E3D00D8D4AF /* FocusEntity */; };
 		2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */; };
 		2FB8A661291E68130044D2A5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FB8A660291E68130044D2A5 /* Extensions.swift */; };
@@ -154,6 +159,11 @@
 		2F76CBF128EDBA2300ED7F9C /* CustomTabBarContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarContainerView.swift; sourceTree = "<group>"; };
 		2F76CBF328EDD8DB00ED7F9C /* TabBarItemsPreferenceKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemsPreferenceKey.swift; sourceTree = "<group>"; };
 		2F9B007F29200D5B00208E67 /* RoomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomModel.swift; sourceTree = "<group>"; };
+		2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../bpr_stuff/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2F9FD7DD29436323005E1576 /* RoomDetailed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDetailed.swift; sourceTree = "<group>"; };
+		2F9FD7DF294365C1005E1576 /* AddRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRoomView.swift; sourceTree = "<group>"; };
+		2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomRepository.swift; sourceTree = "<group>"; };
+		2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomDAO.swift; sourceTree = "<group>"; };
 		2FA57FE0291533A800D8D4AF /* ViewController_CoachingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController_CoachingOverlay.swift; sourceTree = "<group>"; };
 		2FB8A660291E68130044D2A5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2FB8A663291E68EA0044D2A5 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -317,6 +327,8 @@
 				A4DAF699292D3D1700F811D2 /* AddProductView.swift */,
 				A4F50374293B9AA000151872 /* FavoritesView.swift */,
 				A4F50378293BCB4F00151872 /* SidebarView.swift */,
+				2F9FD7DD29436323005E1576 /* RoomDetailed.swift */,
+				2F9FD7DF294365C1005E1576 /* AddRoomView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -333,6 +345,22 @@
 			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
+		2F9FD7E12943FBB8005E1576 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				2F9FD7E22943FBC9005E1576 /* RoomRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		2F9FD7E62943FF97005E1576 /* Dao */ = {
+			isa = PBXGroup;
+			children = (
+				2F9FD7E42943FBF0005E1576 /* RoomDAO.swift */,
+			);
+			path = Dao;
+			sourceTree = "<group>";
+		};
 		2FB8A662291E68A40044D2A5 /* ScanRoomView */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,9 +373,8 @@
 		A461662C28E2F5C800F59461 = {
 			isa = PBXGroup;
 			children = (
-				A4B7C716293D18A2005E8394 /* GoogleService-Info.plist */,
+				2F9FD7DB294362D7005E1576 /* GoogleService-Info.plist */,
 				A461663728E2F5C800F59461 /* LiSIGN */,
-				A461664828E2F5CA00F59461 /* LiSIGNTests */,
 				A461665228E2F5CA00F59461 /* LiSIGNUITests */,
 				A461663628E2F5C800F59461 /* Products */,
 			);
@@ -366,6 +393,8 @@
 		A461663728E2F5C800F59461 /* LiSIGN */ = {
 			isa = PBXGroup;
 			children = (
+				2F9FD7E62943FF97005E1576 /* Dao */,
+				2F9FD7E12943FBB8005E1576 /* Repository */,
 				A48554212947530D00FDCD40 /* Entities */,
 				A4B7C71E293DF997005E8394 /* Objects */,
 				A4F171A528E306D4006BE5B1 /* Fonts */,
@@ -375,6 +404,7 @@
 				A461663A28E2F5C800F59461 /* ContentView.swift */,
 				A461663E28E2F5CA00F59461 /* Preview Content */,
 				A4ECA6D1293F67F400CCF20B /* Images.xcassets */,
+				A461664828E2F5CA00F59461 /* LiSIGNTests */,
 			);
 			path = LiSIGN;
 			sourceTree = "<group>";
@@ -544,6 +574,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				2F9FD7E8294BBCA7005E1576 /* PBXTargetDependency */,
+				2F9FD7EA294BBCA7005E1576 /* PBXTargetDependency */,
 				A461664728E2F5CA00F59461 /* PBXTargetDependency */,
 			);
 			name = LiSIGNTests;
@@ -639,8 +671,8 @@
 				A4F171AE28E30710006BE5B1 /* bad3.png in Resources */,
 				A461664028E2F5CA00F59461 /* Preview Assets.xcassets in Resources */,
 				2FB8A666291E77120044D2A5 /* ScanRoomView.storyboard in Resources */,
+				2F9FD7DC294362D7005E1576 /* GoogleService-Info.plist in Resources */,
 				A461663D28E2F5CA00F59461 /* Assets.xcassets in Resources */,
-				A4B7C717293D18A3005E8394 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -669,7 +701,9 @@
 				A4F50379293BCB4F00151872 /* SidebarView.swift in Sources */,
 				A461663B28E2F5C800F59461 /* ContentView.swift in Sources */,
 				A4305B0829094E0C00E6A41B /* ProductsView.swift in Sources */,
+				2F9FD7E0294365C1005E1576 /* AddRoomView.swift in Sources */,
 				A4F171AC28E306FF006BE5B1 /* OnBoardingPage.swift in Sources */,
+				2F9FD7DE29436323005E1576 /* RoomDetailed.swift in Sources */,
 				A4DAF69A292D3D1700F811D2 /* AddProductView.swift in Sources */,
 				2FA57FE1291533A800D8D4AF /* ViewController_CoachingOverlay.swift in Sources */,
 				2F76CBEB28ED94C500ED7F9C /* MarketPlaceView.swift in Sources */,
@@ -682,11 +716,13 @@
 				A4F5037D293CC92E00151872 /* SidebarViewModel.swift in Sources */,
 				2F9B008029200D5B00208E67 /* RoomModel.swift in Sources */,
 				2F6257C829094085002E9832 /* RoomScanViewModel.swift in Sources */,
+				2F9FD7E52943FBF0005E1576 /* RoomDAO.swift in Sources */,
 				A4F5037B293BD15900151872 /* FilterProductsListViewModel.swift in Sources */,
 				A461663928E2F5C800F59461 /* LiSIGNApp.swift in Sources */,
 				A4F171AA28E306F6006BE5B1 /* LoginPage.swift in Sources */,
 				A48554202943B9BB00FDCD40 /* ObjectScanViewModel.swift in Sources */,
 				2F37678628FB23DE000050FE /* ProductCard.swift in Sources */,
+				2F9FD7E32943FBC9005E1576 /* RoomRepository.swift in Sources */,
 				2F76CBE928ED94B400ED7F9C /* RoomsView.swift in Sources */,
 				A4DAF69C292D3D3A00F811D2 /* ProductsViewModel.swift in Sources */,
 				2F76CBF228EDBA2300ED7F9C /* CustomTabBarContainerView.swift in Sources */,
@@ -724,6 +760,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		2F9FD7E8294BBCA7005E1576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2F9FD7E7294BBCA7005E1576 /* FirebaseAuth */;
+		};
+		2F9FD7EA294BBCA7005E1576 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = 2F9FD7E9294BBCA7005E1576 /* FirebaseDatabase */;
+		};
 		A461664728E2F5CA00F59461 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = A461663428E2F5C800F59461 /* LiSIGN */;
@@ -859,7 +903,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LiSIGN/Preview Content\"";
-				DEVELOPMENT_TEAM = 578GML8YK9;
+				DEVELOPMENT_TEAM = DR7VNX8CP9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View";
@@ -872,7 +916,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = via.LiSIGN;
+				PRODUCT_BUNDLE_IDENTIFIER = via.LiSIGN2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -888,7 +932,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LiSIGN/Preview Content\"";
-				DEVELOPMENT_TEAM = 578GML8YK9;
+				DEVELOPMENT_TEAM = DR7VNX8CP9;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "Needed to show AR View";
@@ -901,7 +945,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = via.LiSIGN;
+				PRODUCT_BUNDLE_IDENTIFIER = via.LiSIGN2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -1176,6 +1220,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		2F9FD7E7294BBCA7005E1576 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2F9FD7E9294BBCA7005E1576 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2F5F5EAA28F0309F00C56C6D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
 		};
 		2FA57FDC29151E3D00D8D4AF /* FocusEntity */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -7,18 +7,29 @@ import Foundation
 import SwiftUI
 import ModelIO
 
-public class Room {
-    private var _id: UUID = UUID()    // Maybe we don't need an id at all
+public class Room: Identifiable {
+    private var _id: String
     private var _title: String = ""
     private var _image: String = ""
-    private var _type: String = ""
-    private var _roomObject: MDLAsset // MDLAsset is the type that LiDAR gives back for the 3D room scan
+    private var _description: String = ""
+    //private var _roomObject: MDLAsset // MDLAsset is the type that LiDAR gives back for the 3D room scan
     
-    public init(roomObject: MDLAsset) {
-        self._roomObject = roomObject
-        // For now, the rest of the properties are hardcoded
-        self._title = "Scan 1"
-        self._type = "Room"
+//    public init(roomObject: MDLAsset) {
+//        self._roomObject = roomObject
+//        // For now, the rest of the properties are hardcoded
+//        self._title = "Scan 1"
+//        self._type = "Room"
+//    }
+    public init(title: String, description: String) {
+        self._id = NSUUID().uuidString
+        self._title = title
+        self._description = description
+    }
+    
+    public var id: String {
+        get {
+            return self._id;
+        }
     }
     
     public var title: String {
@@ -30,32 +41,41 @@ public class Room {
         }
     }
     
-    public var image: String {
+    public var description: String {
         get {
-            return self._image;
+            return self._description;
         }
         set {
-            self._image = newValue
+            self._description = newValue
         }
     }
     
-    public var type: String {
-        get {
-            return self._type;
-        }
-        set {
-            self._type = newValue
-        }
-    }
+//    public var image: String {
+//        get {
+//            return self._image;
+//        }
+//        set {
+//            self._image = newValue
+//        }
+//    }
     
-    public var roomObject: MDLAsset {
-        get {
-            return self._roomObject;
-        }
-        set {
-            self._roomObject = newValue
-        }
-    }
+//    public var type: String {
+//        get {
+//            return self._type;
+//        }
+//        set {
+//            self._type = newValue
+//        }
+//    }
+    
+//    public var roomObject: MDLAsset {
+//        get {
+//            return self._roomObject;
+//        }
+//        set {
+//            self._roomObject = newValue
+//        }
+//    }
 }
 
 //struct Room: Decodable {
