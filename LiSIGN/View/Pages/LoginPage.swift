@@ -55,7 +55,7 @@ struct LoginPage: View {
                         Text("Forgot password?")
                             .font(.custom(customFont, size: 14))
                             .fontWeight(.semibold)
-                            .foregroundColor(Color.brown)
+                            .foregroundColor(Color.cyan)
                     }
                     .padding(.top, 8)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -87,7 +87,7 @@ struct LoginPage: View {
                             .padding(.vertical, 20)
                             .frame(maxWidth: .infinity)
                             .foregroundColor(Color.white)
-                            .background(Color.brown)
+                            .background(Color.cyan)
                             .cornerRadius(15)
                             .shadow(color: Color.black.opacity(0.07), radius: 5, x: 5, y: 5)
                     }
@@ -103,7 +103,7 @@ struct LoginPage: View {
                         Text(loginData.registerUser ? "Back to login" : "Create account")
                             .font(.custom(customFont, size: 14))
                             .fontWeight(.semibold)
-                            .foregroundColor(Color.brown)
+                            .foregroundColor(Color.cyan)
                     }
                     .padding(.top, 8)
                 }
@@ -119,7 +119,7 @@ struct LoginPage: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.brown)
+        .background(Color.cyan)
         .overlay(
             
             Group{
@@ -174,7 +174,7 @@ struct LoginPage: View {
                     }, label: {
                         Text(showPassword.wrappedValue ? "Hide" : "Show")
                             .font(.custom(customFont, size: 13).bold())
-                            .foregroundColor(Color.brown)
+                            .foregroundColor(Color.cyan)
                     })
                     .offset(y: 8)
                 }

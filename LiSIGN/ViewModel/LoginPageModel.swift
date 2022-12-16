@@ -53,9 +53,12 @@ class LoginPageModel: ObservableObject {
     func ForgotPassword(){
         // Do Action here...
     }
-    func Logout() { // Change this to call repository method
+    func Logout() {
+        // Change this to call repository method
+    
             do {
                 try firebaseAuth.signOut()
+                OnBoardingPage()
                 // Not sure if it is: try? FirebaseManager.shared.auth.signOut()
             } catch let signOutError as NSError {
                 print("Error signing out: %", signOutError)

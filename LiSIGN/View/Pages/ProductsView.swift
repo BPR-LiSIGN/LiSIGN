@@ -53,13 +53,18 @@ struct ProductsView: View {
                 }
             }.padding(.vertical)
             NavigationLink{
-//                FavoritesView(productsViewModel: ProductsViewModel())
+                FavoritesView(productsViewModel: EnvironmentObject<ProductsViewModel>())
             }
+            
         label: {
-            Text("Favorites").foregroundColor(.gray)
-                
+//            Button {
+//                productsViewModel.getProductsFromFavoritesList()
+//            } label:{
+                Text("Favorites").foregroundColor(.gray)
+//            }
             
         }
+            
             NavigationView {
                 
                 ScrollView{

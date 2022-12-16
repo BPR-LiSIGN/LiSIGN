@@ -12,6 +12,9 @@ import Firebase
 struct SidebarView: View {
     var viewModel: LoginPageModel
     
+    @State private var navigateToStart =  false
+
+    
     var body: some View {
         VStack (alignment: .trailing){
          
@@ -20,14 +23,32 @@ struct SidebarView: View {
             ForEach(SidebarViewModel.allCases, id:\.rawValue) { value in
               
                 HStack{
-                    Button{ viewModel.Logout()
-                        print("logged out")
+                   
+                    NavigationLink(isActive: $navigateToStart)
+                    {
+                        OnBoardingPage()
                     }
                 label: {
-                    Image(systemName: value.imageName)
-
-                
+                    
+                    Button {
+                        viewModel.Logout()
+                        navigateToStart = true
                     }
+                label: {
+                    Label("logout", systemImage: value.imageName)
+                        .labelStyle(.iconOnly)
+                }
+               
+                }
+//                    Button{ viewModel.Logout()
+//                        print("logged out")
+//
+//                    }
+//                label: {
+//                    Image(systemName: value.imageName)
+//
+//
+//                    }
                     Text(value.name)
                     Spacer()
                    
