@@ -2,8 +2,6 @@
 //  ProductDetailCard.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 11/3/22.
-//
 
 import SwiftUI
 import Firebase
@@ -39,8 +37,6 @@ struct ProductDetailCard: View {
                 VStack{
 
                     SceneView(scene: SCNScene(named: "\(product.name).usdz"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
-                        
-//                    (named: "\(product.name).usdz")
             }.frame(width: 400, height: 400)
                     
                 Text(product.name)

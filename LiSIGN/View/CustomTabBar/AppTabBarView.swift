@@ -19,12 +19,8 @@ struct AppTabBarView: View {
     var body: some View {
         ZStack(alignment: .topLeading) {
             CustomTabBarContainerView(selection: $tabSelection) {
-                // Color.blue
                 roomsView
                     .tabBarItem(tab: .Rooms, selection: $tabSelection)
-                
-                // as an alternative to the eurosign icon, "magnifyingglass"
-                // Color.red
                 marketPlaceView
                     .tabBarItem(tab: .Marketplace, selection: $tabSelection)
                 
@@ -57,7 +53,6 @@ struct AppTabBarView: View {
                 }
             }
             label: {
-//                Circle()
                 Image(systemName: "person.fill")
                     
                     .frame(width: 32, height: 32)

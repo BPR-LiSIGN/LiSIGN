@@ -2,8 +2,6 @@
 //  CardDetailed.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 10/25/22.
-//
 
 import Foundation
 import SwiftUI
@@ -22,8 +20,6 @@ struct CardDetailed: View {
                     VStack{
                         
                         SceneView(scene: SCNScene(named: "\(product.name).usdz"), options: [.autoenablesDefaultLighting, .allowsCameraControl])
-                        
-                        //                    (named: "\(product.name).usdz")
                     }.frame(width: 350, height: 350)
                     
                 

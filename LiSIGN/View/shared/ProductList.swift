@@ -2,8 +2,6 @@
 //  ProductList.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 11/3/22.
-//
 
 import SwiftUI
 import Firebase

@@ -40,15 +40,6 @@ struct SidebarView: View {
                 }
                
                 }
-//                    Button{ viewModel.Logout()
-//                        print("logged out")
-//
-//                    }
-//                label: {
-//                    Image(systemName: value.imageName)
-//
-//
-//                    }
                     Text(value.name)
                     Spacer()
                    

@@ -6,12 +6,6 @@
 import Foundation
 import SwiftUI
 
-//struct TabBarItem: Hashable { // It's Hashable so that it can be used in a foreach loop
-//    let iconName: String
-//    let title: String
-//    let color: Color
-//}
-
 enum TabBarItem: Hashable {
     case Rooms, Marketplace, Objects
 

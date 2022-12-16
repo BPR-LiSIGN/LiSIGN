@@ -2,8 +2,6 @@
 //  CustomCorners.swift
 //  LiSIGN_login
 //
-//  Created by Juan Trebolle on 23/09/2022.
-//
 
 import SwiftUI
 

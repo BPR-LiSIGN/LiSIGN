@@ -2,8 +2,6 @@
 //  FavoritesView.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 12/3/22.
-//
 
 import Foundation
 import SwiftUI

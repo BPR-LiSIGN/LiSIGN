@@ -58,8 +58,6 @@ class RoomRepository: ObservableObject {
             })
         
         print("below the stuff : ", [rooms] )
-//        ProductRepository.shared.getAllProducts()
-//        print("--this is in viewmodel: ", ProductDAO.shared.products.count)
         
         return rooms
 

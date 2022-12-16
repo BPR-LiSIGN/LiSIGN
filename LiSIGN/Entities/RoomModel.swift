@@ -50,24 +50,6 @@ public class Room: Identifiable {
         }
     }
     
-//    public var image: String {
-//        get {
-//            return self._image;
-//        }
-//        set {
-//            self._image = newValue
-//        }
-//    }
-    
-//    public var type: String {
-//        get {
-//            return self._type;
-//        }
-//        set {
-//            self._type = newValue
-//        }
-//    }
-    
 //    public var roomObject: MDLAsset {
 //        get {
 //            return self._roomObject;
@@ -77,11 +59,3 @@ public class Room: Identifiable {
 //        }
 //    }
 }
-
-//struct Room: Decodable {
-//    var title: String
-//    var image: Image
-//    var type: String
-//    var roomObject: MDLAsset
-//}
-

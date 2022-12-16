@@ -2,8 +2,6 @@
 //  ProductCard.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 11/3/22.
-//
 
 import SwiftUI
 
@@ -20,7 +18,6 @@ struct ProductCard_: View {
                     .foregroundColor(.red.opacity(0.9))
                     .padding(.top)
             }
-            // AsyncImage(url: URL(string: product.image)) { image in cimage
             Image("\(product._name)")
                 .resizable()
                 .scaledToFit()

@@ -3,8 +3,6 @@
 //  LiSIGN
 //
 
-// Probably this file can be removed
-
 import SwiftUI
 
 struct HomePage: View {
@@ -24,10 +22,7 @@ struct HomePage: View {
                     .tabItem{
                         Image(systemName: "products")
                         Text("Objects")
-                    }
-                
-            
-           
+                    } 
         }
     }
 }

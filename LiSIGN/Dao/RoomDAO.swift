@@ -51,10 +51,6 @@ class RoomDAO {
             let roomDict = snapshot.value as! [String: Any]
             let title = roomDict["title"] as! String
             let description = roomDict["description"] as! String
-            // let image = roomDict["image"] as! String
-            // let type = roomDict["type"] as! String
-            // let roomObject = roomDict["roomObject"]! as AnyObject // Should be MDLAsset
-            // print(roomDict, title, image, type, roomObject)
             var room = Room(title: title, description: description)
             Swift.print("-------getRoommmm - TITLE: " + room.title)
             Swift.print("-------getRoommmm - DESCRIPTION: " + room.description)

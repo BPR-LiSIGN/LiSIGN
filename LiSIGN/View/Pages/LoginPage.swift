@@ -21,7 +21,7 @@ struct LoginPage: View {
                 .font(.custom(customFont, size: 55).bold())
                 .foregroundColor(.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .frame(height: 200/*getRect().height / 3.5*/)
+                .frame(height: 200)
                 .padding()
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -50,7 +50,6 @@ struct LoginPage: View {
                         loginData.ForgotPassword()
                         // HomePage()
                         print("Now into the Homepage...")
-                        // AppTabBarView()
                     } label: {
                         Text("Forgot password?")
                             .font(.custom(customFont, size: 14))

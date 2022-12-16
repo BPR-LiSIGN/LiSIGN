@@ -2,8 +2,6 @@
 //  SearchBar.swift
 //  LiSIGN
 //
-//  Created by Juan Trebolle on 20/10/2022.
-//
 
 import Foundation
 import SwiftUI

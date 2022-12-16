@@ -2,8 +2,6 @@
 //  AddProductView.swift
 //  LiSIGN
 //
-//  Created by Lenka Orinčáková on 11/6/22.
-//
 
 import SwiftUI
 import Firebase

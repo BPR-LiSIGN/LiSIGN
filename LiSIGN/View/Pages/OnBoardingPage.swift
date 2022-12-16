@@ -5,9 +5,6 @@
 
 import SwiftUI
 
-// TODO: Manage Fonts (see video to structure it well)
-// TODO: Change background color to more blueish purple
-
 // to use custom font on all pages...
 let customFont = "Raleway-VariableFont_wght"
 
@@ -20,11 +17,8 @@ struct OnBoardingPage: View {
                 .font(.custom(customFont, size: 55))
                 .fontWeight(.bold)
                 .foregroundColor(.white)
-            // Add floating effect on the image
-            // Image("bad3").resizable().aspectRatio(contentMode: .fit)
             
             Button {
-                // Not sure if this animation is working properly :/
                 withAnimation{
                     showLoginPage = true
                 }
@@ -42,16 +36,12 @@ struct OnBoardingPage: View {
             }
             .padding(.horizontal, 30)
             .offset(y: 100)
-            // Adding some Adjustments only for larger displays
-            // .offset(y: getRect().height < 750 ? 100 : 40)
             
             Spacer()
         }
         .padding()
-        // .padding(.top, getRect().height < 750 ? 0 : 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            //Color.purple // change the purple to something more blueish
             Color.cyan
         )
         .overlay(

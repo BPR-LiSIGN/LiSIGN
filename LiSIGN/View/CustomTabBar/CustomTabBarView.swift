@@ -30,7 +30,7 @@ struct CustomTabBarView_Previews: PreviewProvider {
     
     static var previews: some View {
         VStack {
-            Spacer() // to push it down to the bottom
+            Spacer()
             CustomTabBarView(tabs: tabs, selection: .constant(tabs.first!), localSelection: tabs.first!)
         }
     }
@@ -66,9 +66,6 @@ extension CustomTabBarView {
     
     private func switchToTab(tab: TabBarItem) {
         selection = tab
-//        withAnimation(.easeInOut) {
-//            selection = tab
-//        }
     }
 }
 
