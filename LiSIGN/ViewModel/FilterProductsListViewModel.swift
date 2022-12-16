@@ -9,13 +9,13 @@ import Foundation
 
 enum FilterProductsListViewModel: Int, CaseIterable {
     case productsList
-    case favoritesList
+//    case favoritesList
     
     var title: String
     {
         switch self {
         case .productsList: return "Products"
-        case .favoritesList: return "Favorites"
+//        case .favoritesList: return "Favorites"
         }
     }
 }

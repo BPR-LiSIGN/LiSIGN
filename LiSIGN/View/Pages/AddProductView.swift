@@ -16,7 +16,6 @@ struct AddProductView: View {
     @State private var info: String = ""
     @State private var navigateToProduct =  false
     @EnvironmentObject var productsViewModel: ProductsViewModel
-//    var viewModel = ReadProductsViewModel()
     
 
     @Environment(\.dismiss) var dismiss
@@ -39,6 +38,7 @@ struct AddProductView: View {
                 {
                     TextEditor(text: $info)
                 }
+                
             }
             .toolbar(content: {
                
@@ -52,8 +52,8 @@ struct AddProductView: View {
                 label: {
                     
                     Button {
+
                         saveProduct()
-//                        viewModel.observeProducts()
                         navigateToProduct = true
                     }
                 label: {
@@ -78,8 +78,10 @@ struct AddProductView_Previews: PreviewProvider {
         AddProductView().environmentObject(ProductsViewModel())
         }
     }
+
 extension AddProductView {
     private func saveProduct() {
+        storyboard()
         let now = Date()
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
@@ -92,7 +94,8 @@ extension AddProductView {
 
         ProductRepository.shared.addProduct(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
         print("----------id and name:  ", product.id, product.name, product.description, product.info, product.datePublished)
-        ProductRepository.shared.addProductToList(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
+        
+        
     }
 }
 

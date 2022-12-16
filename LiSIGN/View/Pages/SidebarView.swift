@@ -10,33 +10,53 @@ import FirebaseAuth
 import Firebase
 
 struct SidebarView: View {
-//    var viewModel = LoginPageModel()
+    var viewModel: LoginPageModel
     
-    var body: some View{
+    @State private var navigateToStart =  false
+
+    
+    var body: some View {
         VStack (alignment: .trailing){
+         
             //if we want something else in the profile, we can put it here
             
             ForEach(SidebarViewModel.allCases, id:\.rawValue) { value in
-                //                if value == .logout {
-                ////                    Button {
-                ////                        viewModel.signout()
-                ////                        print("logged out")
-                ////                        print("current user id ", Auth.auth().curr)
-                ////                    }
-                ////                label: {
-                ////                    SidebarView(value: value)
-                ////
-                //                }
-                //                } else {SidebarView(value: value)}
+              
                 HStack{
-                    Image(systemName: value.imageName)
+                   
+                    NavigationLink(isActive: $navigateToStart)
+                    {
+                        OnBoardingPage()
+                    }
+                label: {
+                    
+                    Button {
+                        viewModel.Logout()
+                        navigateToStart = true
+                    }
+                label: {
+                    Label("logout", systemImage: value.imageName)
+                        .labelStyle(.iconOnly)
+                }
+               
+                }
+//                    Button{ viewModel.Logout()
+//                        print("logged out")
+//
+//                    }
+//                label: {
+//                    Image(systemName: value.imageName)
+//
+//
+//                    }
                     Text(value.name)
                     Spacer()
+                   
                     
                 }.frame(height:700)
                     .padding(.horizontal)
                     .padding(.bottom)
-                
+               
             }
             
         }
@@ -44,6 +64,6 @@ struct SidebarView: View {
 }
 struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
-        SidebarView()
+        SidebarView(viewModel: LoginPageModel())
     }
 }

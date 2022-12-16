@@ -30,6 +30,8 @@ class LoginPageModel: ObservableObject {
     @Published var showReEnterPassword: Bool = false
      var errorText: Bool = false
      let database = Database.database().reference()
+    let firebaseAuth = Auth.auth()
+
     
     // Login Call...
     func Login(){
@@ -51,11 +53,17 @@ class LoginPageModel: ObservableObject {
     func ForgotPassword(){
         // Do Action here...
     }
-    func signout(){
-        try? Auth.auth().signOut()
-        LoginPage()
+    func Logout() {
+        // Change this to call repository method
     
-    }
+            do {
+                try firebaseAuth.signOut()
+                OnBoardingPage()
+                // Not sure if it is: try? FirebaseManager.shared.auth.signOut()
+            } catch let signOutError as NSError {
+                print("Error signing out: %", signOutError)
+            }
+        }
     
     @objc  func addUser() {
         let uid = Auth.auth().currentUser?.uid

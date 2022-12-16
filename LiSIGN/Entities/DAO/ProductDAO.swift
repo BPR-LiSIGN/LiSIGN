@@ -28,6 +28,29 @@ class ProductDAO {
             if let error = err {
                 print("scanned object was not saved: \(error.localizedDescription)")
             } else {
+                print("name: scanned object saved successfully!! ")
+            }
+        })
+        database.child("user").child(userId!).child("scannedObjects").child("productsId").child(id).child("description").setValue(description, withCompletionBlock: { err, ref in
+            if let error = err {
+                print("scanned object was not saved: \(error.localizedDescription)")
+            } else {
+                print("description: scanned object saved successfully!!")
+            }
+        })
+        database.child("user").child(userId!).child("scannedObjects").child("productsId").child(id).child("info").setValue(info, withCompletionBlock: { err, ref in
+            if let error = err {
+                print("scanned object was not saved: \(error.localizedDescription)")
+            } else {
+                print("info: scanned object saved successfully!!")
+            }
+        })
+    }
+    func addProductToFavorites(id: String, name: String, description: String, info: String, datePublished: String) {
+        database.child("user").child(userId!).child("favorites").child("productsId").child(id).child("name").setValue(name, withCompletionBlock: { err, ref in
+            if let error = err {
+                print("scanned object was not saved: \(error.localizedDescription)")
+            } else {
                 print("scanned object saved successfully!!")
             }
         })
@@ -63,19 +86,8 @@ class ProductDAO {
                 
             }
             })
-            
-        
         }
-//        let databaseHandle = database.observe(DataEventType.value, with: { snapshot in
-//
-//        })
-    
-//    func getProductFromDB(name: String, description: String, info: String) {
-//
-////        let databaseHandle = database.observe(DataEventType.value, with: { snapshot in
-////
-////        })
-//    }
+
     
     func getAllPRoductsFromDB()  {
         let allProducts = database.child("user")
@@ -109,29 +121,6 @@ class ProductDAO {
         print("below the stuff : ", products.count )
 
     }
-    
-    
-    
-    
-//    func getAllRoomsFromDB() -> [Room] {
-//    let allRooms = self.database.child("user").child(userId!).child("scanned-rooms")
-//
-//    allRooms.observeSingleEvent(of: .value, with: { snapshot in
-//        for child in snapshot.children {
-//            let snap = child as! DataSnapshot
-//            let roomDict = snap.value as! [String: Any] // Maybe this should be Room??
-//            let title = roomDict["title"] as! String
-//            let image = roomDict["image"] as! String
-//            let type = roomDict["type"] as! String
-//            let roomObject = roomDict["roomObject"]! as AnyObject // Should be MDLAsset
-//            print(roomDict, title, image, type, roomObject)
-//        }
-//    })
-//
-//    // TODO: transform data from firebase into array of Rooms
-//    return allRooms
-//}
-
     
     // DELETE
     func removeProductFromDB(id: String, name: String) {
