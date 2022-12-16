@@ -14,7 +14,6 @@ struct AddRoomView: View {
     @State private var info: String = ""
     @State private var navigateToRoom =  false
     @EnvironmentObject var productsViewModel: ProductsViewModel
-//    var viewModel = ReadProductsViewModel()
     
 
     @Environment(\.dismiss) var dismiss
@@ -32,11 +31,6 @@ struct AddRoomView: View {
                 {
                     TextEditor(text: $description)
                 }
-                
-//                Section(header: Text("Info"))
-//                {
-//                    TextEditor(text: $info)
-//                }
             }
             .toolbar(content: {
                
@@ -49,8 +43,6 @@ struct AddRoomView: View {
                     
                     Button {
                         saveRoom()
-                        
-//                        viewModel.observeProducts()
                         navigateToRoom = true
                     }
                 label: {
@@ -79,9 +71,6 @@ extension AddRoomView {
         print(datePublished)
         
         let room = Room(title: title, description: description)
-//        ProductRepository.shared.addProduct(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
-//        print("----------id and name:  ", product.id, product.name, product.description, product.info, product.datePublished)
-//        ProductRepository.shared.addProductToList(id: product.id, name: product.name, description: product.description, info: product.info, datePublished: datePublished)
         RoomRepository.shared.addRoom(_roomId: room.id, _roomObject: room)
     }
 }
