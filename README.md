@@ -29,3 +29,8 @@ into a saved scanned room.<br/>
 [x] As a user, I want to be able to chat with the owner of the 3D object.<br/>
 [x] As a user, I want to be able to order the scanned object from online shop.<br/>
 
+
+# REFERENCE
+The Swift Classes ViewController_CoachingOverlay.swift, ScanRoomViewModel.swift, ScanProductViewModel.swift, RoundedButton.swift and Extensions.swift are taken from the sample code from the official documentation of Apple (https://developer.apple.com/documentation/arkit/content_anchors/visualizing_and_interacting_with_a_reconstructed_scene) and the saveButtonPressed method inside ScanRoomViewModel and ScanProductViewModel from https://medium.com/zeitraumgruppe/what-arkit-3-5-and-the-new-ipad-pro-bring-to-the-table-d4bf25e5dd87
+
+The proper reference is done in the Sources of information inside the Project Report.
